@@ -1,0 +1,70 @@
+// Footer
+
+.footer {
+    .footerContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        width: 100%;
+
+        @media (width >=768px) {
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (width >=1200px) {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 5rem;
+            justify-content: flex-start;
+            gap: 1.5rem;
+        }
+
+        a {
+            position: relative;
+            overflow: hidden;
+            line-height: 1.25rem;
+
+            &:last-child {
+                @media (width <768px) {
+                    line-height: 1.4rem;
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 0.15rem;
+                background: var(--seaGreen);
+                transition: all 0.3s ease;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .dot {
+        flex-shrink: 0;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 0.33rem;
+        height: 0.33rem;
+        border-radius: 50%;
+
+        @media (width >=1200px) {
+            display: flex;
+        }
+    }
+}

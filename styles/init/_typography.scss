@@ -1,0 +1,309 @@
+// typography.scss
+
+/*
+* =============================================
+* Headings
+* ============================================= 
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-sora), ui-sans-serif, sans-serif;
+    font-weight: 600;
+    line-height: 115% !important;
+    text-wrap: balance;
+    margin: 0;
+    padding: 0;
+
+    @media (width >=768px) {
+        text-align: center;
+    }
+
+    @media (width >=1200px) {
+        text-align: left;
+    }
+}
+
+
+h1 {
+    font-size: 2rem;
+
+    @media (width >=768px) {
+        font-size: 3rem;
+    }
+
+    @media (width >=1200px) {
+        font-size: 3.5rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+
+    @media (width >=768px) {
+        font-size: 2.5rem;
+    }
+
+    @media (width >=1200px) {
+        font-size: 3rem;
+    }
+
+}
+
+h3 {
+    font-size: 1.5rem;
+
+    @media (width >=768px) {
+        font-size: 2rem;
+    }
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/*
+* =============================================
+* Text, lists, inputs, links
+* ============================================= 
+*/
+
+p,
+ul,
+ol {
+    font-size: 0.875rem;
+    line-height: 175%;
+    font-weight: 300;
+
+    @media (width >=768px) {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    @media (width >=1200px) {
+        text-align: left;
+    }
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    margin: 0;
+}
+
+// Link Styling
+.link,
+.link a {
+    position: relative;
+    padding-bottom: 0.15rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -0.15rem;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background: var(--secondary);
+    }
+}
+
+// Link styling ------ Light
+.light .link,
+.light .link a {
+    color: var(--light);
+
+    &::after {
+        background: var(--secondary);
+    }
+}
+
+// Set font-family on inputs
+label,
+input,
+textarea {
+    font-family: var(--text);
+}
+
+/*
+* =============================================
+* Class based styles
+* ============================================= 
+*/
+
+.stroke {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px var(--light);
+
+    @media (width >=768px) {
+        -webkit-text-stroke: 2px var(--light);
+    }
+}
+
+// Text ----- Primary
+.primary:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        color: var(--primary);
+    }
+}
+
+span.primary {
+    color: var(--primary);
+}
+
+// Text ----- Secondary
+.secondary:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        color: var(--secondary);
+    }
+}
+
+span.secondary {
+    color: var(--secondary);
+}
+
+// Text ----- Accent
+.accent:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        color: var(--accent);
+    }
+}
+
+.accentTwo:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span {
+        color: var(--accentTwo);
+    }
+}
+
+.accentThree:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    spanaccent {
+        color: var(--accentThree);
+    }
+}
+
+// Text ------ Dark
+.dark:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+        color: var(--dark) !important;
+    }
+}
+
+// Text ------ Light
+.light:not(.btn) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    div {
+        color: var(--light);
+    }
+
+    .eyebrow .text::before {
+        background: var(--light);
+    }
+}
+
+// Subheadings on text modules
+.hasSubHeadings em {
+    font-size: 1rem;
+
+    @media (width >=768px) {
+        font-size: 1.25rem;
+    }
+}
+
+// Numbers
+.hasNumberList {
+    ol {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0 0 0 1.5rem;
+        margin: 0.5rem 0 1.5rem;
+
+        li {
+            padding: 0;
+            margin: 0;
+            font-weight: 500;
+            line-height: 160%;
+
+            &::marker {
+                font-weight: 700;
+            }
+        }
+    }
+}

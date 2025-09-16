@@ -1,0 +1,26 @@
+.videoBanner {
+
+    @media (width >=1200px) {
+        padding-top: calc(var(--headerHeight) * 0.5);
+    }
+
+    .videoContainer {
+        max-width: unset;
+
+        @media (width >=1200px) {
+            padding-right: calc(var(--headerHeight) * 0.5);
+            padding-left: calc(var(--headerHeight) * 0.5);
+        }
+    }
+
+    .video {
+        mask-image: url("../../public/masks/video-mask-landscape.svg");
+        -webkit-mask-image: url("../../public/masks/video-mask-landscape.svg");
+        mask-size: cover;
+        mask-repeat: no-repeat;
+        mask-position: center;
+        max-height: calc(100vh - calc(var(--headerHeight) + 1rem));
+        overflow: hidden;
+    }
+}
+

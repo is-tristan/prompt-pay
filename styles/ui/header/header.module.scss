@@ -1,0 +1,133 @@
+@mixin submenu() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    min-width: max-content;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    background: rgba(var(--lightRgb), 0.15);
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.15s ease;
+}
+
+$headerTransition: all 0.15s ease-in-out;
+
+.header {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    @media (width >=1200px) {
+        position: fixed;
+        z-index: 9999;
+        top: calc(var(--headerHeight) * 0.5);
+        transition: $headerTransition;
+
+        &.active {
+            top: calc(var(--headerHeight) * 0.15);
+
+            .headerContainer {
+                background: rgba(var(--darkRgb), 0.75);
+                backdrop-filter: blur(1.5rem);
+                border-radius: 1rem;
+                height: calc(var(--headerHeight) * 0.85);
+            }
+
+            .logo img {
+                height: calc(var(--headerHeight) * 0.4);
+            }
+        }
+    }
+}
+
+.headerContainer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    transition: $headerTransition;
+
+    @media (width >=1200px) {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: var(--headerHeight);
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        @media (width >=1200px) {
+            height: calc(var(--headerHeight) * 0.5);
+            width: auto;
+            transition: $headerTransition;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+
+    &.desktopMenu {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navItem {
+        position: relative;
+
+        &.hasSubMenu {
+            &::after {
+                content: "";
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-left: 0.5rem;
+                vertical-align: middle;
+                border-top: 0.35rem solid var(--primary);
+                border-right: 0.35rem solid transparent;
+                border-left: 0.35rem solid transparent;
+            }
+
+            &:hover,
+            &:focus-within {
+                .subMenu {
+                    top: 100%;
+                    left: 0;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .navLink {
+        transition: var(--ease);
+
+        &.active,
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
+
+.subMenu {
+    @include submenu();
+}

@@ -1,0 +1,233 @@
+/*
+* =============================================
+* Forms
+* ============================================= 
+*/
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 576px;
+    margin: 0 auto;
+
+    @media (width >=768px) {
+        flex-direction: row;
+    }
+}
+
+// Item
+.formItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    border: none;
+    padding: unset;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // Half Width
+    &.half {
+        @media (width >=768px) {
+            flex-basis: calc(50% - 0.5rem);
+        }
+    }
+
+    // Conset
+    &.consent {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    // Labels
+    label {
+        font-size: 0.75rem;
+        opacity: 0.75;
+
+        .required {
+            color: var(--primary);
+        }
+
+        .optional {
+            color: var(--dark);
+        }
+    }
+
+    // Inputs
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    input[type="search"],
+    textarea {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0.875rem 1.25rem;
+        min-height: 4rem;
+        background-color: transparent;
+        border-radius: var(--btnRadius);
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        font-family: var(--text);
+        font-size: 0.875rem;
+        line-height: 1;
+        font-weight: 500;
+        color: var(--dark);
+        opacity: 1;
+        transition: var(--ease);
+
+        &::placeholder {
+            opacity: 0.66;
+            color: var(--dark);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary);
+            background-color: var(--light);
+            color: var(--dark);
+        }
+    }
+}
+
+.consent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: max-content;
+    position: relative;
+    margin: 1rem auto;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    input[type="checkbox"] {
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1rem;
+        height: 1rem;
+
+        &:checked+.checkbox::before {
+            display: flex;
+        }
+    }
+
+    .checkbox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid var(--dark);
+        border-radius: 0.25rem;
+        position: relative;
+
+        &::before {
+            display: none;
+            content: "✓";
+            position: absolute;
+            margin: auto;
+            inset: 0;
+            justify-content: center;
+            align-items: center;
+            width: 1rem;
+            height: 1rem;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+// Form Footer
+.formFooter {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+// Form Message
+.formMessage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    width: 100%;
+
+    .heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+}
+
+// Checkmark
+.checkmark__circle {
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    stroke-width: 2;
+    stroke-miterlimit: 10;
+    stroke: var(--primary);
+    fill: none;
+    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: block;
+    stroke-width: 2;
+    stroke: #fff;
+    stroke-miterlimit: 10;
+    margin: 0;
+    box-shadow: inset 0px 0px 0px var(--primary);
+    animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check {
+    transform-origin: 50% 50%;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke {
+    100% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: none
+    }
+
+    50% {
+        transform: scale3d(1.1, 1.1, 1)
+    }
+}
+
+@keyframes fill {
+    100% {
+        box-shadow: inset 0px 0px 0px 30px var(--primary);
+    }
+}

@@ -1,0 +1,177 @@
+.navToggleContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.33rem;
+    flex-shrink: 0;
+}
+
+// Mobile Nav Toggle
+.navToggle {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.33rem;
+    flex-basis: 15%;
+    width: 3rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    .navLine {
+        width: 3rem;
+        height: 2.75px;
+        background: var(--primary);
+        transition: var(--ease);
+    }
+}
+
+.mobileMenu {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: -150%;
+    bottom: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 85%;
+    padding: 3rem;
+    background: var(--lightAlt);
+    transition: var(--ease);
+    border-radius: 0.25rem 0 0 0.25rem;
+    overflow-y: scroll;
+
+    @media (width >=768px) {
+        max-width: 66.66%;
+    }
+
+    @media (width >=1024px) {
+        max-width: 50%;
+    }
+}
+
+.mobileMenuContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.mobileMenuHeader {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+
+    .mobileMenuClose {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: var(--dark);
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.mobileNavMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    @media (width >=768px) {
+        gap: 2rem;
+    }
+
+    li {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        &::after {
+            content: unset !important;
+        }
+
+        &.current-menu-item {
+            color: var(--dark);
+        }
+
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            width: 100%;
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            opacity: 0.75;
+            transition: var(--ease);
+
+            @media (width >=768px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        svg {
+            position: relative;
+            top: 0.33rem;
+        }
+
+        &:hover,
+        &.current-menu-item {
+            a {
+                opacity: 1;
+            }
+        }
+    }
+
+    .sub-menu {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 0 0.75rem 0.33rem;
+        line-height: 150%;
+
+        a {
+            font-weight: 500;
+            text-transform: none;
+        }
+    }
+}
+
+.mobileMenuFooter {
+    .socialItem {
+        background-color: var(--light);
+        color: var(--secondary);
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+.menuActive {
+    .mobileMenu {
+        right: -1%;
+    }
+}
+
+.mobileMenuBtns {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    @media (width >=768px) {
+        flex-direction: row;
+    }
+}

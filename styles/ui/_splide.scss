@@ -1,0 +1,88 @@
+.splideSlider {
+
+    .splide__pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 3rem auto;
+        position: unset;
+
+        button {
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 5rem;
+            background: transparent;
+            border: 1px solid var(--dark);
+            opacity: 1;
+            transition: var(--ease);
+
+            @media (width >=1200px) {
+                width: 1.75rem;
+                height: 1.75rem;
+            }
+
+            &:hover {
+                background: var(--dark);
+                border-color: var(--dark);
+            }
+
+            &.is-active {
+                transform: unset;
+                width: 2.5rem;
+                background: var(--dark);
+
+                @media (width >=1200px) {
+                    width: 3.5rem;
+                }
+            }
+        }
+    }
+
+    &.arrows .splide__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        background: var(--light);
+        border: 2px solid var(--light);
+        border-radius: 50%;
+        opacity: 1 !important;
+        box-shadow: 0 0.25rem 1rem rgba(var(--darkRgb), 0.1);
+        border: 1px solid rgba(var(--darkRgb), 0.15);
+        transition: var(--ease);
+
+        @media (width >=768px) {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        svg {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 66.66%;
+            height: 66.66%;
+            background: url("/wp-content/uploads/2025/06/banner-arrow-dark.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        &.splide__arrow--prev {
+            left: 0;
+            transform: scale(-1) translateY(50%) translateX(50%);
+        }
+
+        &.splide__arrow--next {
+            right: 0;
+            transform: translateY(-50%) translateX(50%);
+        }
+    }
+}

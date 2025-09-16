@@ -1,0 +1,71 @@
+// Jet Engine Slider
+.jetSlider {
+
+    .jet-listing-grid__item {
+        padding: 0;
+        margin: 0;
+    }
+
+    .slick-arrow {
+        display: none !important;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        width: 4rem;
+        height: 4rem;
+        border: 2px solid var(--dark);
+        border-radius: 50%;
+        transition: var(--ease);
+
+        @media (width >=1200px) {
+            display: flex !important;
+        }
+
+        svg {
+            display: none;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 66.66%;
+            height: 66.66%;
+            background: url("/wp-content/uploads/2025/06/banner-arrow-dark.svg");
+            background-size: contain;
+            background-position: center;
+        }
+
+        &:hover {
+            background: rgba(var(--darkRgb), 0.15);
+        }
+
+        &.prev-arrow {
+            left: 1.5rem;
+            transform: scale(-1)
+        }
+
+        &.next-arrow {
+            right: 1.5rem;
+            transform: scale(1)
+        }
+    }
+
+    &.lightArrows {
+
+        .slick-arrow {
+            border-color: var(--light);
+
+            &::after {
+                background: url("/wp-content/uploads/2025/06/banner-arrow-light-1.svg");
+                background-size: contain;
+                background-position: center;
+            }
+
+            &:hover {
+                background: rgba(var(--darkRgb), 0.5);
+            }
+        }
+    }
+}
