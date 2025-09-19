@@ -1,16 +1,15 @@
 .productSlider {
-
     .splide__slide {
         @media (width >=1200px) {
             transition: scale 0.25s ease;
             scale: 0.85;
-            opacity: 0.66;
+            filter: brightness(75%);
             cursor: grab;
 
             &.is-visible,
             &.is-active {
                 scale: 1;
-                opacity: 1;
+                filter: brightness(100%);
                 cursor: default;
 
                 .arrows {
@@ -121,50 +120,4 @@
         }
     }
 
-    .splide__pagination {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        width: 100%;
-        margin: 2rem auto 0;
-        position: unset;
-
-        @media (width >=1200px) {
-            margin: 3rem auto 0;
-            gap: 1.5rem;
-        }
-
-        .splide__pagination__page {
-            all: unset;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 1.5rem;
-            height: 1.5rem;
-            background: url("../../../public/logos/logo-mark.svg") no-repeat center/contain !important;
-            transition: var(--ease);
-            opacity: 1;
-            filter: grayscale(100%) brightness(75%);
-            cursor: pointer;
-
-            @media (width >=1200px) {
-                width: 2rem;
-                height: 2rem;
-            }
-
-            &:hover,
-            &.is-active {
-                width: 1.5rem;
-                height: 1.5rem;
-                filter: none;
-
-                @media (width >=1200px) {
-                    width: 2rem;
-                    height: 2rem;
-                }
-            }
-        }
-    }
 }

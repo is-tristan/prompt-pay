@@ -4,7 +4,9 @@ import List from "./list";
 import Image from "next/image";
 
 export default function DualCols({
-    className="",
+    rowClassName = "",
+    containerClassName = "",
+    backgroundImage = "",
     eyebrow = "",
     title = "",
     text = "",
@@ -22,9 +24,9 @@ export default function DualCols({
 
     return (
 
-        <section className={`row`}>
+        <section className={`row ${rowClassName ? rowClassName : undefined}`} style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}>
 
-            <div className={`container dualCols  ${className ? className : undefined}`}>
+            <div className={`container dualCols  ${containerClassName ? containerClassName : undefined}`}>
 
                 <div className="col contentCol">
 
@@ -40,12 +42,13 @@ export default function DualCols({
 
                     <div className="col imageCol fill">
 
-
                         <Image src={image} alt={imageAlt} loading="lazy" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
 
                     </div>
 
                 }
+
+                {backgroundImage && <div className="col imageCol hidden-s hidden-m"></div>}
 
             </div>
 

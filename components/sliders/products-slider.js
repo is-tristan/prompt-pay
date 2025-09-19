@@ -9,6 +9,7 @@ import Buttons from "@/components/ui/reusables/buttons";
 
 // Styles
 import "@/styles/components/reusables/product-slider.scss";
+import "@/styles/ui/splide/splide-styles.scss";
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -24,7 +25,7 @@ export default function ProductSlider() {
 
     const splideRef = useRef(null);
 
-    const slides = [
+    const cloverSlides = [
         {
             id: 1,
             image: cloverProductImage,
@@ -59,8 +60,10 @@ export default function ProductSlider() {
         perPage: 1,
         perMove: 1,
         gap: '4rem',
-        autoplay: false,
+        autoplay: true,
+        interval: 7500,
         pauseOnHover: true,
+        pauseOnFocus: true,
         arrows: false,
         pagination: true,
         padding: { left: "25%", right: "25%" },
@@ -97,11 +100,11 @@ export default function ProductSlider() {
 
     return (
 
-        <div className="productSliderWrapper">
+        <div className="sliderWrapper productSliderWrapper">
 
             <Splide ref={splideRef} options={options} aria-label="Products Slider" className={`splideSlider productSlider`}>
 
-                {slides.map((slide) => (
+                {cloverSlides.map((slide) => (
 
                     <SplideSlide key={slide.id}>
 

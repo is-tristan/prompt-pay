@@ -1,0 +1,15 @@
+.hasBackgroundImage {
+    @media (width < 1200px) {
+        background-image: none !important;
+    }
+
+    @media (width >=1200px) {
+        background-size: calc(50% - 5rem);
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &.backgroundImageLeft {
+            background-position: 1% 10%;
+        }
+    }
+}
