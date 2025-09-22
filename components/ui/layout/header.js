@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 // Styles
-import styles from "@/styles/ui/header/header.module.scss";
+import styles from "@/styles/ui/layout/header.module.scss";
 
 // Components
 import Buttons from "@/components/ui/reusables/buttons";

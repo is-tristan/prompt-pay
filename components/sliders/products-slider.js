@@ -8,12 +8,12 @@ import { useRef } from "react";
 import Buttons from "@/components/ui/reusables/buttons";
 
 // Styles
-import "@/styles/components/reusables/product-slider.scss";
-import "@/styles/ui/splide/splide-styles.scss";
+import "@/styles/ui/sliders/product-slider.scss";
+import "@/styles/ui/sliders/splide-styles.scss";
+import '@splidejs/react-splide/css';
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
 
 // Icons
 import { ArrowLeft, ArrowRight } from '@carbon/react/icons';

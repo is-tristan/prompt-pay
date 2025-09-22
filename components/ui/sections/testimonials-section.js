@@ -8,7 +8,7 @@ import Image from "next/image";
 import Heading from "@/components/ui/reusables/heading";
 
 // Styles
-import "@/styles/components/reusables/testimonials.scss";
+import "@/styles/ui/reusables/testimonials.scss";
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';

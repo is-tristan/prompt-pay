@@ -1,0 +1,53 @@
+.logoSliderSection {
+    h3 {
+        @media all {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+}
+
+.logoSliderWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: 15%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(to right, var(--dark) 0%, transparent 100%);
+    }
+
+    &::after {
+        right: 0;
+        left: auto;
+        scale: -1;
+    }
+}
+
+.logoSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    aspect-ratio: 16 / 9;
+
+    img {
+        object-fit: contain;
+        max-height: 5rem;
+    }
+}

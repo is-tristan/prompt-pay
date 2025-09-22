@@ -1,0 +1,273 @@
+$borderColor: rgba(var(--lightRgb), 0.1);
+$footerPadding: 3rem;
+
+.footerBorder {
+    border-top: 2px solid $borderColor;
+    border-bottom: 2px solid $borderColor;
+    width: 100%;
+    max-width: 100%;
+}
+
+.topFooter {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    @media all {
+        padding-top: $footerPadding;
+        padding-bottom: $footerPadding;
+    }
+
+    @media (width <768px) {
+        >div {
+            flex: 1 0 100%;
+        }
+    }
+
+    @media (width >=768px) {
+        >div {
+            flex: 1 0 calc(50% - 0.75rem);
+        }
+    }
+
+    .statusIndicator {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: max-content;
+
+        .statusIcon {
+            width: 0.66rem;
+            height: 0.66rem;
+            border-radius: 50%;
+            animation: pulse 1.25s ease infinite;
+
+            &.activeStatusIcon {
+                background: #4AAF05;
+            }
+
+            @keyframes pulse {
+                0% {
+                    filter: brightness(100%);
+                }
+
+                50% {
+                    filter: brightness(150%);
+                }
+
+                100% {
+                    filter: brightness(100%);
+                }
+            }
+        }
+
+        .statusText {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.875rem;
+        }
+    }
+
+    .footerLogos {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+            width: max-content;
+            height: 1.5rem;
+        }
+
+        .footerLogoItems {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footerLogoItem {
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 4rem;
+                height: 1.5rem;
+                position: relative;
+
+                img {
+                    object-fit: contain;
+                }
+            }
+
+            &:last-child {
+                a {
+                    width: 2rem;
+                    height: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.footerMain {
+    @media all {
+        padding-top: $footerPadding;
+        padding-bottom: $footerPadding;
+    }
+
+    @media (width >=1200px) {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: stretch;
+        gap: 1rem;
+
+        >div {
+            flex: 1 0 calc(20% - 2rem);
+        }
+    }
+
+    .footerCol {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: -0.5rem;
+            width: 1px;
+            height: 100%;
+            background: $borderColor;
+
+            @media (width >=1200px) {
+                content: "";
+            }
+        }
+
+        @media (width >=1200px) {
+            padding: 0 1rem;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+
+                &::after {
+                    content: unset;
+                }
+            }
+        }
+
+        h6 {
+            @media all {
+                font-size: 0.75rem;
+                color: rgba(var(--lightRgb), 0.75);
+            }
+        }
+    }
+
+    .subscribeForm {
+
+        .footerFormItem {
+            input {
+                min-height: 2.5rem;
+            }
+        }
+
+        .footerFormButton {
+            min-height: 2.5rem;
+            padding: 0 1.5rem;
+            background: rgba(var(--lightRgb), 0.1);
+            border: 2px solid rgba(var(--lightRgb), 0.1);
+            color: rgba(var(--lightRgb), 0.85);
+
+            &:hover {
+                color: rgba(var(--primaryRgb), 1);
+                border-color: rgba(var(--primaryRgb), 1);
+            }
+        }
+    }
+
+    .footerNav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 115%;
+
+        a {
+            opacity: 0.75;
+            transition: var(--ease);
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.footerLogo {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--light);
+    padding-top: $footerPadding;
+    padding-bottom: $footerPadding;
+
+    .footerSocialLinks {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(var(--lightRgb), 0.15);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            transition: var(--ease);
+
+            img {
+                width: 50%;
+                height: 50%;
+                object-fit: contain;
+                filter: brightness(0) invert(1);
+                opacity: 0.75;
+                transition: var(--ease);
+            }
+
+            &:hover {
+                background: rgba(var(--lightRgb), 0.25);
+
+                img {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.footerCopyright {
+    padding-top: $footerPadding;
+    padding-bottom: $footerPadding;
+}

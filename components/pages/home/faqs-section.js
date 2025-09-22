@@ -34,7 +34,7 @@ export default function FaqsSection() {
 
     return (
 
-        <section className="row faqsSection">
+        <section id="faq" className="row faqsSection">
 
             <div className="container spaceBetween noPaddingBottom">
 

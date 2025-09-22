@@ -4,7 +4,7 @@ export default function InstagramSection() {
 
     return (
 
-        <section id="instagram" className="row instagramSection">
+        <section id="instagram" className="row instagramSection" aria-hidden="true">
 
             <div className="container noPaddingBottom centered">
 

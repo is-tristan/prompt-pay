@@ -80,6 +80,21 @@ a:active {
     outline: 0;
 }
 
+.skipToContent {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    transition: var(--ease);
+
+    &:focus {
+        top: 0;
+    }
+}
+
 /*
 * =============================================
 * Hidden classes

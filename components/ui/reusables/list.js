@@ -1,5 +1,5 @@
 // Styles
-import styles from "@/styles/components/reusables/list.module.scss";
+import styles from "@/styles/ui/reusables/list.module.scss";
 
 // Icons
 import { CheckmarkFilled } from '@carbon/react/icons';

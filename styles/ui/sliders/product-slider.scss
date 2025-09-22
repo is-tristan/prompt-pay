@@ -1,0 +1,123 @@
+.productSlider {
+    .splide__slide {
+        @media (width >=1200px) {
+            transition: scale 0.25s ease;
+            scale: 0.85;
+            filter: brightness(75%);
+            cursor: grab;
+
+            &.is-visible,
+            &.is-active {
+                scale: 1;
+                filter: brightness(100%);
+                cursor: default;
+
+                .arrows {
+                    display: flex;
+                }
+            }
+        }
+    }
+
+    .productCard {
+        display: flex;
+        flex-flow: column-reverse nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 2rem;
+        gap: 1.5rem;
+        background: var(--darkAlt);
+        border-radius: var(--colRadius);
+
+        @media (width >=1200px) {
+            flex-flow: row wrap;
+            align-items: stretch;
+            padding: 3rem;
+            gap: 3rem;
+        }
+
+        @media (width >=1400px) {
+            padding: 4rem;
+        }
+
+        @media (width >=1920px) {
+            padding: 5rem;
+        }
+
+        .productContent {
+            flex-basis: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 1rem;
+
+            @media (width >=1200px) {
+                flex: 1 1 calc(55% - 1.5rem);
+                max-width: 30rem;
+            }
+        }
+
+        .productImage {
+            flex-basis: 100%;
+
+            @media (width >=1200px) {
+                flex: 1 1 calc(45% - 1.5rem);
+            }
+        }
+    }
+
+    .arrows {
+        display: none;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        .productSliderArrows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            color: var(--light);
+            opacity: 1;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+
+            @media (width >=1920px) {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            &.productSliderArrows--prev {
+                left: -1.5rem;
+
+                @media (width >=1920px) {
+                    left: -2rem;
+                }
+
+            }
+
+            &.productSliderArrows--next {
+                right: -1.5rem;
+
+                @media (width >=1920px) {
+                    right: -2rem;
+                }
+            }
+
+            svg {
+                path {
+                    fill: var(--light);
+                }
+            }
+        }
+    }
+
+}

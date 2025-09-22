@@ -1,0 +1,88 @@
+.sliderWrapper {
+    position: relative;
+    width: 100%;
+
+    .customArrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: var(--colRadius);
+        background: rgba(var(--lightRgb), 0.15);
+        border: 1px solid rgba(var(--lightRgb), 0.25);
+        backdrop-filter: blur(10px);
+        color: var(--light);
+        position: absolute;
+        z-index: 10;
+        cursor: pointer;
+        transition: var(--ease);
+
+        &:hover {
+            background: rgba(var(--lightRgb), 0.25);
+        }
+
+        &.customArrowPrev,
+        &.customArrowNext {
+            top: 0;
+            bottom: 0;
+            left: 1rem;
+            margin: auto;
+            transform: translateY(-50%);
+        }
+
+        &.customArrowNext {
+            left: unset;
+            right: 1rem;
+        }
+    }
+}
+
+.splideSlider {
+    .splide__pagination {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+        margin: 2rem auto 0;
+        position: unset;
+
+        @media (width >=1200px) {
+            margin: 3rem auto 0;
+            gap: 1.5rem;
+        }
+
+        .splide__pagination__page {
+            all: unset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: url("../../../public/logos/logo-mark.svg") no-repeat center/contain !important;
+            transition: var(--ease);
+            opacity: 1;
+            filter: grayscale(100%) brightness(75%);
+            cursor: pointer;
+
+            @media (width >=1200px) {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            &:hover,
+            &.is-active {
+                width: 1.5rem;
+                height: 1.5rem;
+                filter: none;
+
+                @media (width >=1200px) {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
+        }
+    }
+}

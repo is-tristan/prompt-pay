@@ -1,5 +1,5 @@
 // Styles
-import styles from "@/styles/components/reusables/faqs.module.scss";
+import styles from "@/styles/ui/reusables/faqs.module.scss";
 
 // Icons
 import { Help } from '@carbon/react/icons';

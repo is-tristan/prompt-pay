@@ -4,7 +4,7 @@
 import Image from "next/image";
 
 // Styles
-import "@/styles/components/reusables/text-slider.scss";
+import "@/styles/ui/reusables/text-slider.scss";
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -100,7 +100,7 @@ export default function TextSlider() {
 
     return (
 
-        <div className="row textSliderRow">
+        <div className="row textSliderRow" aria-hidden="true">
 
             <div className="textSliderContainer textSliderOne">
 

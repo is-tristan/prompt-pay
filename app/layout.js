@@ -4,6 +4,7 @@ import "@/styles/main.scss";
 
 // Components
 import Header from "@/components/ui/layout/header";
+import Footer from "@/components/ui/layout/footer";
 
 const sora = Sora({
   variable: "--font-sora",
@@ -22,12 +23,25 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
+
     <html lang="en">
+
       <body className={`${dmSans.variable} ${sora.variable}`}>
+
+        <a href="#content" className="skipToContent" tabIndex="-1">Skip to main content</a>
+
         <Header />
-        {children}
+
+        <main id="content" className="content" aria-label="Main Content">{children}</main>
+
+        <Footer />
+
       </body>
+
     </html>
+
   );
+
 }

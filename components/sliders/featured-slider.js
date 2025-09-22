@@ -7,11 +7,11 @@ import { useRef } from "react";
 import Buttons from "@/components/ui/reusables/buttons";
 
 // Styles
-import "@/styles/components/reusables/featured-slider.scss";
+import "@/styles/ui/sliders/featured-slider.scss";
+import '@splidejs/react-splide/css';
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
 
 // Icons
 import { ArrowLeft, ArrowRight } from '@carbon/react/icons';

@@ -4,7 +4,7 @@
 import React, { useEffect, useRef } from 'react';
 
 // Styles
-import "@/styles/components/reusables/stats.scss";
+import "@/styles/ui/reusables/stats.scss";
 
 export default function Stats({ countFrom = 0, countTo = 100, duration = 1500, title, text, prefix, suffix }) {
     const wrapperRef = useRef(null);

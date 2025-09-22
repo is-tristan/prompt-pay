@@ -1,0 +1,80 @@
+.contactItems {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 0.5rem;
+
+    .contactItem {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        padding: 1rem;
+        gap: 1rem;
+        background: var(--darkAlt);
+        border-radius: var(--colRadius);
+        border: 1px solid rgba(var(--lightRgb), 0.1);
+        position: relative;
+        color: var(--light);
+        transition: var(--ease);
+
+        @media (width >=1200px) {
+            flex: 1 1 calc(50% - 1rem);
+            justify-content: flex-start;
+        }
+
+        &:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+
+            .contactItemIcon {
+                color: var(--primary);
+            }
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .contactItemIcon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(var(--lightRgb), 0.05);
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        color: rgba(var(--lightRgb), 0.85);
+        transition: var(--ease);
+    }
+
+    .contactItemContent {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        text-align: left;
+        gap: 0.33rem;
+
+        h4 {
+            @media all {
+                font-size: 0.75rem;
+            }
+        }
+
+        span {
+            font-size: 0.75rem;
+        }
+    }
+
+}

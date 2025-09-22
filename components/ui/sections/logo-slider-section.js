@@ -4,11 +4,11 @@
 import Image from "next/image";
 
 // Styles
-import "@/styles/components/reusables/logo-slider.scss";
+import "@/styles/ui/sliders/logo-slider.scss";
+import '@splidejs/react-splide/css';
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import '@splidejs/react-splide/css';
 import { AutoScroll } from '@splidejs/splide-extension-auto-scroll';
 
 export default function FeatureSlider() {
@@ -90,7 +90,7 @@ export default function FeatureSlider() {
 
     return (
 
-        <section className="row logoSliderSection">
+        <section className="row logoSliderSection" aria-hidden="true">
 
             <div className="container noPaddingBottom centered">
 

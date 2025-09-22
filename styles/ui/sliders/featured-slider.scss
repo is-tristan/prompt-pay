@@ -1,0 +1,56 @@
+.featureSliderCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--colRadius);
+
+    @media (width >=768px) {
+        aspect-ratio: 4/3;
+    }
+
+    @media (width >=1200px) {
+        aspect-ratio: unset;
+        min-height: 27.5rem;
+    }
+
+    .featureSliderContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+
+        h3 {
+            @media all {
+                font-size: 1.25rem;
+            }
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+            line-height: 150%;
+            transition: var(--ease);
+        }
+    }
+
+    @media (hover: hover) {
+        .featureSliderContent p {
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:hover {
+            .featureSliderContent {
+                p {
+                    height: 3rem;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

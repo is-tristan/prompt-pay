@@ -12,7 +12,7 @@ export default function HomeTabs() {
 
     return (
 
-        <section className={`row homeTabs`}>
+        <section id="products" className={`row homeTabs`}>
 
             <Image src={dots} alt="" className="bgTopRight" fill sizes="(max-width: 1200px) 100vw, 1200px" style={{ objectFit: "contain", objectPosition: "right top", zIndex: "-1" }} />
 

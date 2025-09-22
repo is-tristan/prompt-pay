@@ -3,7 +3,7 @@ export default function HomeBanner() {
 
     return (
 
-        <section className={`row homeBanner videoBanner`}>
+        <section id="banner" className={`row homeBanner videoBanner`}>
 
             <div className={`container noPaddingTop noPaddingBottom videoContainer`}>
 

@@ -12,6 +12,8 @@ import FaqsSection from "@/components/pages/home/faqs-section";
 import LogoSlider from "@/components/ui/sections/logo-slider-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
 import InstagramSection from "@/components/ui/sections/instagram-section";
+import ContactSection from "@/components/ui/sections/contact-section";
+import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
 
 export default function Home() {
   return (
@@ -48,6 +50,8 @@ export default function Home() {
       <LogoSlider />
       <TestimonialsSection />
       <InstagramSection />
+      <ContactSection />
+      <FullwidthVideoSection />
     </>
   );
 }

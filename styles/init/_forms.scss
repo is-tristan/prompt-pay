@@ -6,15 +6,16 @@
 
 .form {
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    gap: 0.5rem;
+    flex-flow: column nowrap;
+    gap: 0.875rem;
     width: 100%;
     max-width: 576px;
     margin: 0 auto;
+    padding: 0;
 
     @media (width >=768px) {
-        flex-direction: row;
+        flex-flow: row wrap;
+        gap: 1rem 0.66rem;
     }
 }
 
@@ -24,22 +25,37 @@
     flex-direction: column;
     gap: 0.5rem;
     width: 100%;
-    margin-bottom: 0.5rem;
     border: none;
     padding: unset;
+    position: relative;
 
-    &:last-child {
-        margin-bottom: 0;
+    @media (width >=768px) {
+        flex-basis: calc(50% - 0.66rem);
     }
 
-    // Half Width
-    &.half {
-        @media (width >=768px) {
-            flex-basis: calc(50% - 0.5rem);
+    // Full Width > 768px
+    &.fullWidth {
+        flex-basis: 100%;
+    }
+
+    // Dropdowns
+    &.dropdown {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 1.25rem;
+            margin: auto;
+            width: 0.33rem;
+            height: 0.33rem;
+            border-right: 1px solid rgba(var(--lightRgb), 0.75);
+            border-bottom: 1px solid rgba(var(--lightRgb), 0.75);
+            transform: translateY(-50%) rotate(45deg);
+            pointer-events: none;
         }
     }
 
-    // Conset
+    // Consent
     &.consent {
         flex-direction: row;
         align-items: center;
@@ -55,7 +71,7 @@
         }
 
         .optional {
-            color: var(--dark);
+            color: var(--light);
         }
     }
 
@@ -65,33 +81,55 @@
     input[type="tel"],
     input[type="password"],
     input[type="search"],
-    textarea {
+    textarea,
+    select {
         display: flex;
         align-items: center;
         width: 100%;
         padding: 0.875rem 1.25rem;
-        min-height: 4rem;
+        min-height: 3.5rem;
         background-color: transparent;
-        border-radius: var(--btnRadius);
-        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: var(--colRadius);
+        border: 2px solid rgba(var(--lightRgb), 0.15);
         font-family: var(--text);
         font-size: 0.875rem;
         line-height: 1;
         font-weight: 500;
-        color: var(--dark);
+        color: var(--light);
         opacity: 1;
         transition: var(--ease);
 
         &::placeholder {
             opacity: 0.66;
-            color: var(--dark);
+            color: var(--light);
         }
 
         &:focus {
             outline: none;
             border-color: var(--primary);
-            background-color: var(--light);
-            color: var(--dark);
+            background-color: rgba(var(--lightRgb), 0.15);
+            color: var(--light);
+        }
+    }
+
+    select {
+        appearance: none;
+
+        option {
+            background: var(--dark);
+            color: var(--light);
+        }
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 6rem;
+        max-height: 12rem;
+        overflow-y: auto;
+        line-height: 140%;
+
+        @media all {
+            flex-basis: 100%;
         }
     }
 }
@@ -105,48 +143,25 @@
     position: relative;
     margin: 1rem auto;
 
-    label {
+    .consentInput {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
-    }
-
-    input[type="checkbox"] {
-        position: absolute;
-        z-index: 1;
-        opacity: 0;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 1rem;
-        height: 1rem;
-
-        &:checked+.checkbox::before {
-            display: flex;
-        }
-    }
-
-    .checkbox {
-        display: flex;
         justify-content: center;
-        align-items: center;
-        width: 1rem;
-        height: 1rem;
-        border: 1px solid var(--dark);
-        border-radius: 0.25rem;
         position: relative;
+        width: 1.25rem;
+        height: 1.25rem;
+        border: 2px solid rgba(var(--lightRgb), 0.15);
+        border-radius: 0.25rem;
 
-        &::before {
-            display: none;
-            content: "✓";
+        input[type="checkbox"] {
             position: absolute;
-            margin: auto;
-            inset: 0;
-            justify-content: center;
-            align-items: center;
+            z-index: 1;
+            opacity: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
             width: 1rem;
             height: 1rem;
-            font-size: 0.8rem;
         }
     }
 }
@@ -156,7 +171,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 1rem;
+
+    button {
+        width: 100%;
+        min-height: 3.5rem;
+    }
 }
 
 // Form Message

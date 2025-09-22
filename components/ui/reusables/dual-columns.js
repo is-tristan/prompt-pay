@@ -24,7 +24,7 @@ export default function DualCols({
 
     return (
 
-        <section className={`row ${rowClassName ? rowClassName : undefined}`} style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}>
+        <section id={`dualCols-${Math.random().toString(36).substr(2, 9)}`} className={`row ${rowClassName ? rowClassName : undefined}`} style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}>
 
             <div className={`container dualCols  ${containerClassName ? containerClassName : undefined}`}>
 

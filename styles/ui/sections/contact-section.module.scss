@@ -1,0 +1,45 @@
+.contactSectionContainer {
+    @media (width >=1200px) {
+        flex-flow: row-reverse nowrap;
+        gap: 4rem;
+        align-items: stretch;
+    }
+
+    .contactFormCol {
+        @media (width >=1200px) {
+            flex: 1 1 calc(55% - 2rem);
+        }
+    }
+
+    .contactInfoCol {
+        @media (width >=1200px) {
+            flex: 1 1 calc(45% - 2rem);
+        }
+    }
+}
+
+.contactFormCol {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    background: var(--darkAlt);
+    padding: 3rem 1.5rem 1rem;
+    border-radius: var(--colRadius);
+
+    h3 {
+        @media all {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.contactInfoCol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}

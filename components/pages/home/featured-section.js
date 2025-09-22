@@ -6,7 +6,7 @@ export default function FeaturedSection() {
 
     return (
 
-        <section className="section featuredSection">
+        <section id="featured" className="section featuredSection">
 
             <div className="container noPaddingTop noPaddingBottom centered" style={{ marginBottom: "1.5rem" }}>
 
