@@ -1,5 +1,8 @@
 .productSlider {
     .splide__slide {
+        background: var(--darkAlt);
+        border-radius: var(--colRadius);
+
         @media (width >=1200px) {
             transition: scale 0.25s ease;
             scale: 0.85;
@@ -18,106 +21,175 @@
             }
         }
     }
+}
 
-    .productCard {
+.productCard {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+    gap: 1.5rem;
+    height: 100%;
+    position: relative;
+    z-index: 10;
+
+    @media (width >=1200px) {
+        flex-flow: row-reverse nowrap;
+        align-items: stretch;
+        padding: 3rem;
+    }
+
+    @media (width >=1400px) {
+        padding: 3rem 3rem 3rem 4rem;
+    }
+
+    @media (width >=1920px) {
+        padding-left: 6rem;
+    }
+
+    @media (width >=2560px) {
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+
+    }
+
+    .productContent {
+        flex-basis: 100%;
         display: flex;
-        flex-flow: column-reverse nowrap;
-        justify-content: space-between;
-        align-items: center;
-        padding: 3rem 2rem;
-        gap: 1.5rem;
-        background: var(--darkAlt);
-        border-radius: var(--colRadius);
+        flex-flow: column nowrap;
+        justify-content: center;
+        gap: 0.5rem;
+        position: relative;
 
         @media (width >=1200px) {
-            flex-flow: row wrap;
-            align-items: stretch;
-            padding: 3rem;
-            gap: 3rem;
+            flex: 1 1 calc(50% - 0.75rem);
         }
 
-        @media (width >=1400px) {
-            padding: 4rem;
-        }
-
-        @media (width >=1920px) {
-            padding: 5rem;
-        }
-
-        .productContent {
-            flex-basis: 100%;
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: center;
-            gap: 1rem;
+        .productText {
+            margin: 0;
+            padding: 0;
+            font-size: 0.875rem;
+            line-height: 150%;
 
             @media (width >=1200px) {
-                flex: 1 1 calc(55% - 1.5rem);
-                max-width: 30rem;
+                font-size: 0.9rem;
             }
-        }
-
-        .productImage {
-            flex-basis: 100%;
-
-            @media (width >=1200px) {
-                flex: 1 1 calc(45% - 1.5rem);
-            }
-        }
-    }
-
-    .arrows {
-        display: none;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        position: absolute;
-        inset: 0;
-        margin: auto;
-
-        .productSliderArrows {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 50%;
-            background: var(--primary);
-            border: none;
-            color: var(--light);
-            opacity: 1;
-            position: relative;
-            z-index: 10;
-            cursor: pointer;
 
             @media (width >=1920px) {
-                width: 4rem;
-                height: 4rem;
+                font-size: 1rem;
             }
+        }
+    }
 
-            &.productSliderArrows--prev {
-                left: -1.5rem;
+    .slideBtn {
+        @media (width >=1200px) {
+            margin-top: 1rem;
+        }
+    }
 
-                @media (width >=1920px) {
-                    left: -2rem;
-                }
+    .additionalInfoToggle {
+        all: unset;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.25rem;
+        font-weight: 600;
+        font-size: 0.875rem;
+        cursor: pointer;
+        padding: 0.5rem 0;
 
-            }
-
-            &.productSliderArrows--next {
-                right: -1.5rem;
-
-                @media (width >=1920px) {
-                    right: -2rem;
-                }
-            }
-
+        &open {
             svg {
-                path {
-                    fill: var(--light);
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .additionalInfoInner {
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            list-style: square;
+            padding: 0 1rem 1rem;
+            line-height: 150%;
+
+            @media (width >=1200px) {
+                gap: 0.5rem;
+            }
+
+            li {
+                &::marker {
+                    color: var(--primary);
                 }
             }
         }
     }
 
+    .productImage {
+        flex-basis: 100%;
+
+        @media (width >=1200px) {
+            flex: 1 1 calc(50% - 0.75rem);
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+}
+
+.arrows {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+
+    .productSliderArrows {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--primary);
+        border: none;
+        color: var(--light);
+        opacity: 1;
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+
+        @media (width >=1920px) {
+            width: 4rem;
+            height: 4rem;
+        }
+
+        &.productSliderArrows--prev {
+            left: -1.5rem;
+
+            @media (width >=1920px) {
+                left: -2rem;
+            }
+
+        }
+
+        &.productSliderArrows--next {
+            right: -1.5rem;
+
+            @media (width >=1920px) {
+                right: -2rem;
+            }
+        }
+
+        svg {
+            path {
+                fill: var(--light);
+            }
+        }
+    }
 }

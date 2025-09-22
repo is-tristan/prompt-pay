@@ -23,8 +23,8 @@
 
     .navLine {
         width: 3rem;
-        height: 2.75px;
-        background: var(--primary);
+        height: 2px;
+        background: rgba(var(--lightRgb), 0.75);
         transition: var(--ease);
     }
 }

@@ -21,9 +21,9 @@ export default function Home() {
       <VideoBanner />
       <HomeTabs />
       <DualCols
-        rowClassName="hasBackgroundImage backgroundImageLeft"
         containerClassName="rowReverse"
-        backgroundImage="/images/misc/grow-your-business-desktop.png"
+        image="/images/misc/grow-your-business-desktop.png"
+        imageAlt="Grow your business with Worldpay from Prompt Pay Capital"
         eyebrow="POWERFUL DASHBOARD"
         title="See your business at a glance, anytime"
         text="We don't just process payments, we give businesses tools to turn every transaction into opportunity and every payment into progress. With speed, security and simplicity at our core, you can focus on growing your business."

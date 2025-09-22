@@ -7,9 +7,9 @@
     gap: 0.5rem;
 
     .contactItem {
+        flex-basis: 100%;
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center;
         padding: 1rem;
         gap: 1rem;
         background: var(--darkAlt);
@@ -21,7 +21,6 @@
 
         @media (width >=1200px) {
             flex: 1 1 calc(50% - 1rem);
-            justify-content: flex-start;
         }
 
         &:hover {

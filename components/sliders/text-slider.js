@@ -4,7 +4,7 @@
 import Image from "next/image";
 
 // Styles
-import "@/styles/ui/reusables/text-slider.scss";
+import styles from "@/styles/ui/sliders/text-slider.module.scss";
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -100,23 +100,23 @@ export default function TextSlider() {
 
     return (
 
-        <div className="row textSliderRow" aria-hidden="true">
+        <div className={`row ${styles.textSliderRow}`} aria-hidden="true">
 
-            <div className="textSliderContainer textSliderOne">
+            <div className={`${styles.textSliderContainer} ${styles.textSliderOne}`}>
 
-                <Splide options={options} extensions={{ AutoScroll }} aria-label="Worldpay Slider" className={`textSlider`}>
+                <Splide options={options} extensions={{ AutoScroll }} aria-label="Worldpay Slider" className={`${styles.textSlider}`}>
 
                     {worldPaySlides.map((slide) => (
 
                         <SplideSlide key={slide.id}>
 
-                            <div className="textSlideItem">
+                            <div className={styles.textSlideItem}>
 
                                 <span>Powered by</span>
 
                                 <Image src={slide.image} alt={slide.alt} width={96} height={32} loading="lazy" />
 
-                                <Image src="/logos/logo-mark.svg" alt="" width={32} height={32} loading="lazy" className="logoMark" />
+                                <Image src="/logos/logo-mark.svg" alt="" width={32} height={32} loading="lazy" className={styles.logoMark} />
 
                             </div>
 
@@ -128,21 +128,21 @@ export default function TextSlider() {
 
             </div>
 
-            <div className="textSliderContainer textSliderTwo">
+            <div className={`${styles.textSliderContainer} ${styles.textSliderTwo}`}>
 
-                <Splide options={{ ...options, direction: "rtl" }} extensions={{ AutoScroll }} aria-label="Clover Slider" className={`textSlider`}>
+                <Splide options={{ ...options, direction: "rtl" }} extensions={{ AutoScroll }} aria-label="Clover Slider" className={`${styles.textSlider}`}>
 
                     {cloverSlides.map((slide) => (
 
                         <SplideSlide key={slide.id}>
 
-                            <div className="textSlideItem">
+                            <div className={styles.textSlideItem}>
 
                                 <span>Powered by</span>
 
                                 <Image src={slide.image} alt={slide.alt} width={96} height={32} loading="lazy" />
 
-                                <Image src="/logos/logo-mark.svg" alt="" width={32} height={32} loading="lazy" className="logoMark" />
+                                <Image src="/logos/logo-mark.svg" alt="" width={32} height={32} loading="lazy" className={styles.logoMark} />
 
                             </div>
 

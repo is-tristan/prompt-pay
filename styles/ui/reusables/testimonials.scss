@@ -22,6 +22,14 @@
         border-radius: var(--colRadius);
         font-size: 0.875rem;
 
+        @media (width < 1200px) {
+            position: absolute;
+            z-index: 1;
+            bottom: -5rem;
+            right: 0rem;
+            scale: 0.8;
+        }
+
         @media (width >=1200px) {
             padding: 1.5rem;
         }
@@ -94,11 +102,9 @@
             align-items: center;
             gap: 1rem;
             width: 100%;
-            text-align: center;
 
             @media (width >=1200px) {
                 justify-content: space-between;
-                text-align: left;
             }
 
             .testimonialMetaText {
@@ -127,19 +133,21 @@
             }
 
             .testimonialMetaLogo {
+                flex-basis: 100%;
                 display: flex;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
                 width: 100%;
 
                 @media (width >=1200px) {
                     flex: 0 1 calc(50% - 1rem);
+                    justify-content: center;
                 }
 
                 img {
                     object-position: left;
                     width: auto;
-                    max-height: 1.5rem;
+                    max-height: 1.25rem;
                     object-fit: contain;
 
                     @media (width >=1200px) {

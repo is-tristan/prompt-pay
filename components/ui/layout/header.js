@@ -6,6 +6,7 @@ import Image from "next/image";
 
 // Styles
 import styles from "@/styles/ui/layout/header.module.scss";
+import mobileStyles from "@/styles/ui/layout/mobile-menu.module.scss";
 
 // Components
 import Buttons from "@/components/ui/reusables/buttons";
@@ -40,7 +41,7 @@ export default function Header() {
             }
         }
 
-        window.innerWidth >= 1200 ? onHeaderScroll() : window.removeEventListener("scroll", onHeaderScroll);
+        onHeaderScroll();
     });
 
     return (
@@ -53,7 +54,7 @@ export default function Header() {
 
                     <Link href="/" aria-label="Home">
 
-                        <Image src={logo} alt="Prompt Pay Capital Logo" width={128} height={48} style={{ objectFit: "contain" }} priority />
+                        <Image src={logo} alt="Prompt Pay Capital Logo" width={128} height={32} style={{ objectFit: "contain" }} priority />
 
                     </Link>
 
@@ -97,7 +98,19 @@ export default function Header() {
 
                 <div className={`hidden-s hidden-m ${styles.menuCta}`}>
 
-                    <Buttons btnOneText="Book a call" btnOneLink="#" btnOneClass="primary menuBtn hasAnimation" />
+                    <Buttons btnOneText="Book a call" btnOneLink="https://calendly.com/alex-promptpaycapital" target="_blank" btnOneClass="primary menuBtn hasAnimation" />
+
+                </div>
+
+                <div className={`hidden-l ${mobileStyles.navToggleContainer}`}>
+
+                    <button className={mobileStyles.navToggle} aria-label="Open Menu" aria-expanded="false" aria-controls="mobileMenu">
+
+                        <span className={mobileStyles.navLine} />
+
+                        <span className={mobileStyles.navLine} />
+
+                    </button>
 
                 </div>
 

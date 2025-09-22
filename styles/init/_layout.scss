@@ -22,7 +22,7 @@
 
     // Header
     --headerHeight: 7.5rem;
-    --footerHeight: 5rem;
+    --mobileHeaderHeight: 5rem;
 
     // Layout
     --layoutMaxWidth: 1366px;
@@ -135,7 +135,7 @@ a:active {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     width: 100%;
     height: max-content;
     position: relative;
@@ -152,7 +152,7 @@ a:active {
     gap: 1rem;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 2rem;
 
     @media (width >=768px) {
         padding: 3rem;
@@ -355,6 +355,14 @@ a:active {
     gap: 1rem;
     padding: 0;
     margin: 0;
+
+    &.mobileCentered {
+        @media (width <768px) {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
 
     @media (width >=768px) and (width < 1200px) {
         align-items: center;

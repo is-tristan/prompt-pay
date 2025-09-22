@@ -1,4 +1,6 @@
 .contactSectionContainer {
+    flex-direction: column-reverse;
+
     @media (width >=1200px) {
         flex-flow: row-reverse nowrap;
         gap: 4rem;
@@ -42,4 +44,9 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @media (width >=1200px) {
+        margin-bottom: 0;
+    }
 }

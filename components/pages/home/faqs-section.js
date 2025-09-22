@@ -39,7 +39,7 @@ export default function FaqsSection() {
             <div className="container spaceBetween noPaddingBottom">
 
                 <Heading
-                    className="hasFullStop centerText"
+                    className="hasFullStop mobileCentered"
                     eyebrow="FREQUENTLY ASKED QUESTIONS"
                     title="Quick answers, even faster payments"
                 />
@@ -48,6 +48,7 @@ export default function FaqsSection() {
                     btnOneClass="primary hasAnimation"
                     btnOneText="See all FAQs"
                     btnOneLink="/faqs"
+                    hiddenMobile={true}
                 />
 
             </div>
@@ -55,6 +56,14 @@ export default function FaqsSection() {
             <div className="container noPaddingTop">
 
                 <Faqs faqs={faqs} />
+
+
+                <Buttons
+                    btnOneClass="primary hasAnimation"
+                    btnOneText="See all FAQs"
+                    btnOneLink="/faqs"
+                    hiddenDesktop={true}
+                />
 
             </div>
 

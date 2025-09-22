@@ -4,13 +4,22 @@ import Link from "next/link";
 // Icons
 import { ArrowUpRight } from '@carbon/react/icons';
 
-export default function Buttons({ btnOneText = "Get Started", btnOneLink = "#", btnOneClass = "primary", btnTwoText = "", btnTwoLink = "#", btnTwoClass = "secondary" }) {
+export default function Buttons({
+    btnOneText = "Get Started",
+    btnOneLink = "#",
+    btnOneClass = "primary",
+    btnTwoText = "",
+    btnTwoLink = "#",
+    btnTwoClass = "secondary",
+    target = "_self",
+    hiddenMobile = false,
+    hiddenDesktop = false }) {
 
     return (
 
-        <div className="buttons">
+        <div className={`buttons ${hiddenMobile ? "hidden-s hidden-m" : undefined} ${hiddenDesktop ? "hidden-l hidden-xl" : undefined}`}>
 
-            <Link className={`btn ${btnOneClass}`} href={btnOneLink}>
+            <Link className={`btn ${btnOneClass}`} href={btnOneLink} target={target}>
 
                 <span>{btnOneText}</span>
 
@@ -22,7 +31,7 @@ export default function Buttons({ btnOneText = "Get Started", btnOneLink = "#", 
 
             </Link>
 
-            {btnTwoText && <Link className={`btn ${btnTwoClass}`} href={btnTwoLink}>
+            {btnTwoText && <Link className={`btn ${btnTwoClass}`} href={btnTwoLink} target={target}>
 
                 <span>{btnTwoText}</span>
 

@@ -21,21 +21,27 @@ $headerTransition: all 0.15s ease-in-out;
 .header {
     width: 100%;
     margin: 0 auto;
-    position: relative;
+    position: fixed;
+    z-index: 9999;
+    transition: $headerTransition;
+
+    &.active {
+        .headerContainer {
+            background: rgba(var(--darkRgb), 0.75);
+            backdrop-filter: blur(1.5rem);
+            border-radius: 0 0 1rem 1rem;
+            height: calc(var(--headerHeight) * 0.66);
+        }
+    }
 
     @media (width >=1200px) {
-        position: fixed;
-        z-index: 9999;
         top: calc(var(--headerHeight) * 0.5);
-        transition: $headerTransition;
 
         &.active {
             top: calc(var(--headerHeight) * 0.15);
+            border-radius: 1rem;
 
             .headerContainer {
-                background: rgba(var(--darkRgb), 0.75);
-                backdrop-filter: blur(1.5rem);
-                border-radius: 1rem;
                 height: calc(var(--headerHeight) * 0.85);
             }
 
@@ -55,6 +61,7 @@ $headerTransition: all 0.15s ease-in-out;
     width: 100%;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    height: var(--mobileHeaderHeight);
     transition: $headerTransition;
 
     @media (width >=1200px) {

@@ -1,4 +1,5 @@
 .videoBanner {
+    padding-top: calc(var(--headerHeight) * 0.66);
 
     @media (width >=1200px) {
         padding-top: calc(var(--headerHeight) * 0.5);
@@ -6,6 +7,8 @@
 
     .videoContainer {
         max-width: unset;
+        padding-right: 0;
+        padding-left: 0;
 
         @media (width >=1200px) {
             padding-right: calc(var(--headerHeight) * 0.5);
@@ -14,24 +17,64 @@
     }
 
     .video {
-        mask-image: url("../../public/masks/video-mask-landscape.svg");
-        -webkit-mask-image: url("../../public/masks/video-mask-landscape.svg");
         mask-size: cover;
         mask-repeat: no-repeat;
         mask-position: center;
         max-height: calc(100vh - calc(var(--headerHeight) + 1rem));
         overflow: hidden;
+
+        @media (width >=1200px) {
+            mask-image: url("../../public/masks/video-mask-landscape.svg");
+            -webkit-mask-image: url("../../public/masks/video-mask-landscape.svg");
+        }
     }
 }
 
+.tabNav {
+    @media all {
+        flex-flow: row nowrap;
+        gap: 1rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .tabNavItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        background: rgba(var(--lightRgb), 0.05);
+        border: 1px solid rgba(var(--lightRgb), 0.15);
+        border-radius: var(--btnRadius);
+        transition: var(--ease);
+        cursor: pointer;
+
+        @media (width >=1200px) {
+            font-size: 1rem;
+            padding: 1rem 2rem;
+        }
+
+        &.active {
+            background: var(--primary);
+            color: var(--light);
+        }
+    }
+}
+
+$containerMaxWidth: 1200px;
+
 .ctaRow {
-    $containerMaxWidth: 1200px;
-    margin: 20rem auto 7.5rem;
+    max-width: 90%;
+    margin: 20rem auto 4rem;
     position: relative;
     overflow: unset;
 
     @media (width >=1200px) {
         max-width: $containerMaxWidth;
+        margin: 20rem auto 7.5rem;
     }
 
     &::before {
@@ -40,22 +83,28 @@
         background: url("/backgrounds/background-top-triangle.svg");
         background-size: contain;
         background-repeat: no-repeat;
-        top: -2.5rem;
+        top: -1.5rem;
         left: 0;
-        width: 33.33%;
+        width: 66.66%;
         height: 4rem;
+        overflow: hidden;
 
-        @media (width >=1200px) {
-            width: 40%
+        @media (width >=768px) {
+            top: -2.5rem;
+            width: 40%;
         }
     }
 
     .container {
+        flex-flow: column-reverse nowrap;
         background-color: var(--darkAlt);
         border-radius: 0 var(--colRadius) var(--colRadius) var(--colRadius);
 
+        @media (width >=1200px) {
+            flex-flow: row nowrap;
+        }
+
         &::before {
-            content: '';
             position: absolute;
             inset: 0;
             margin: auto;
@@ -68,6 +117,10 @@
             filter: invert(1);
             opacity: 0.05;
             transform: translateX(5%) translateY(-5%);
+
+            @media (width >=768px) {
+                content: '';
+            }
         }
 
         @media (width >=1200px) {
@@ -93,8 +146,11 @@
         }
 
         .globeCol {
+            flex-basis: 100%;
             position: relative;
             overflow: visible;
+            width: 100%;
+            height: auto;
 
             @media (width >=1200px) {
                 flex-basis: 55%;
@@ -102,12 +158,18 @@
 
             .globeContainer {
                 position: absolute;
-                inset: 0;
-                margin: auto;
-                height: 35rem;
+
+                @media (width < 768px) {
+                    width: 19rem;
+                    height: 19rem;
+                    top: -15rem;
+                    right: -5rem;
+                }
 
                 @media (width >=768px) {
                     height: 45rem;
+                    inset: 0;
+                    margin: auto;
                 }
 
                 @media (width >=1200px) {
@@ -123,15 +185,21 @@
             justify-content: center;
             align-items: center;
             width: max-content;
-            padding: 0.875rem;
+            padding: 0.25rem;
             background: var(--dark);
             border-radius: var(--colRadius);
             border: 1px solid rgba(var(--lightRgb), 0.15);
             position: absolute;
-            top: -2.5rem;
-            left: -2.5rem;
+            top: -12rem;
+            left: -1.5rem;
             z-index: 10;
             transition: var(--ease);
+
+            @media (width >=768px) {
+                top: -2.5rem;
+                left: -2.5rem;
+                padding: 0.875rem;
+            }
 
             @media (hover: hover) and (pointer: fine) {
                 &:hover {
@@ -148,10 +216,15 @@
             }
 
             &.floatingTextTwo {
-                top: unset;
-                bottom: -2.5rem;
-                right: -2.5rem;
-                left: unset;
+                top: -7rem;
+                left: -1.5rem;
+
+                @media (width >=768px) {
+                    top: unset;
+                    left: unset;
+                    bottom: -2.5rem;
+                    right: -2.5rem;
+                }
             }
 
             p {

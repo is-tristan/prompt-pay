@@ -12,7 +12,7 @@ export default function HomeBanner() {
                     muted loop
                     playsInline
                     preload="none"
-                    className={`hidden-s hidden-m video`}
+                    className={`video`}
                     style={{ width: "100%", height: "100%", objectFit: "cover", aspectRatio: "16/9" }}>
 
                     <source src="/videos/prompt-pay-banner-video.mp4" type="video/mp4" />
