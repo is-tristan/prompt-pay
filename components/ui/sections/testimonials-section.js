@@ -9,6 +9,7 @@ import Heading from "@/components/ui/reusables/heading";
 
 // Styles
 import "@/styles/ui/reusables/testimonials.scss";
+import "@/styles/ui/sliders/splide-styles.scss";
 
 // Splide
 import { Splide, SplideSlide } from '@splidejs/react-splide';

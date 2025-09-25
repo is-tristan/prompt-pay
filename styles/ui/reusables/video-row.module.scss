@@ -1,0 +1,31 @@
+.videoRow {
+    &.overlayBanner {
+        margin-top: -1rem;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media (width >=768px) {
+            margin-top: -5rem;
+        }
+
+        @media (width >=1200px) {
+            max-width: 100%;
+            margin-top: -7.5rem;
+        }
+
+        @media (width >=1400px) {
+            margin-top: -10rem;
+        }
+
+        @media (width >=1920px) {
+            margin-top: -12.5rem;
+        }
+    }
+
+    .videoContainer {
+        border-radius: var(--colRadius);
+        overflow: hidden;
+        border: 1px solid rgba(var(--lightRgb), 0.15);
+    }
+}

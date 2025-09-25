@@ -8,7 +8,7 @@
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     padding: 0;
     width: 100%;
 
@@ -31,7 +31,6 @@
 }
 
 .btn {
-    flex-basis: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -39,13 +38,12 @@
     gap: 0.25rem;
     width: auto;
     padding: 0.75rem 0.875rem;
-    border: 2px solid transparent;
+    border: 1px solid transparent;
     border-radius: var(--btnRadius);
     font-family: var(--text);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     line-height: 1;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 600;
     color: var(--light);
     overflow: hidden;
     transition: var(--ease);
@@ -54,15 +52,21 @@
     @media (width >=768px) {
         flex: 0 0 auto;
         gap: 0.5rem;
+        font-size: 0.875rem;
     }
 
     .btnIcon {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 0.875rem;
+        height: 0.875rem;
         position: relative;
+
+        @media (width >=768px) {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
 
         svg {
             width: 75%;

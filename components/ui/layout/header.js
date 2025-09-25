@@ -1,5 +1,4 @@
 "use client";
-
 // Next
 import Link from "next/link";
 import Image from "next/image";
@@ -10,6 +9,9 @@ import mobileStyles from "@/styles/ui/layout/mobile-menu.module.scss";
 
 // Components
 import Buttons from "@/components/ui/reusables/buttons";
+import MobileMenu from "@/components/ui/layout/mobile-menu";
+
+import { useState } from "react";
 
 export default function Header() {
 
@@ -30,6 +32,16 @@ export default function Header() {
         { href: "/about", label: "About" },
         { href: "/contact", label: "Contact" },
     ];
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+    const handleMobileMenuToggle = () => {
+        setIsMobileMenuOpen((prev) => !prev);
+    };
+
+    const handleMobileMenuClose = () => {
+        setIsMobileMenuOpen(false);
+    };
 
     if (typeof window !== "undefined") window.addEventListener("scroll", () => {
         const onHeaderScroll = () => {
@@ -104,17 +116,26 @@ export default function Header() {
 
                 <div className={`hidden-l ${mobileStyles.navToggleContainer}`}>
 
-                    <button className={mobileStyles.navToggle} aria-label="Open Menu" aria-expanded="false" aria-controls="mobileMenu">
-
+                    <button
+                        className={mobileStyles.navToggle}
+                        aria-label="Open Menu"
+                        aria-expanded={isMobileMenuOpen}
+                        aria-controls="mobileMenu"
+                        onClick={handleMobileMenuToggle}
+                    >
                         <span className={mobileStyles.navLine} />
-
                         <span className={mobileStyles.navLine} />
-
                     </button>
 
                 </div>
 
             </div>
+
+            <MobileMenu
+                menuItems={links}
+                isOpen={isMobileMenuOpen}
+                onClose={handleMobileMenuClose}
+            />
 
         </header>
 

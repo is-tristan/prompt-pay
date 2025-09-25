@@ -1,10 +1,18 @@
 .contactSectionContainer {
     flex-direction: column-reverse;
 
+    &.rowReverse {
+        flex-direction: column;
+    }
+
     @media (width >=1200px) {
         flex-flow: row-reverse nowrap;
         gap: 4rem;
         align-items: stretch;
+
+        &.rowReverse {
+            flex-flow: row nowrap;
+        }
     }
 
     .contactFormCol {

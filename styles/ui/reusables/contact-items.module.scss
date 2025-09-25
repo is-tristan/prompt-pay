@@ -17,7 +17,6 @@
         border: 1px solid rgba(var(--lightRgb), 0.1);
         position: relative;
         color: var(--light);
-        transition: var(--ease);
 
         @media (width >=1200px) {
             flex: 1 1 calc(50% - 1rem);
@@ -27,6 +26,7 @@
             color: var(--primary);
             border-color: var(--primary);
             transform: translateY(-2px);
+            transition: var(--ease);
 
             .contactItemIcon {
                 color: var(--primary);

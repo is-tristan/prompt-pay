@@ -8,6 +8,7 @@ export default function DualCols({
     containerClassName = "",
     backgroundImage = "",
     eyebrow = "",
+    headingLevel = "h2",
     title = "",
     text = "",
     image = "",
@@ -30,7 +31,7 @@ export default function DualCols({
 
                 <div className="col contentCol">
 
-                    <Heading className="hasFullStop" eyebrow={eyebrow} title={title} text={text} />
+                    <Heading className="hasFullStop" level={headingLevel} eyebrow={eyebrow} title={title} text={text} />
 
                     {hasList && <List items={listItems} />}
 

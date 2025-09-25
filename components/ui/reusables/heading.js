@@ -3,7 +3,7 @@
 // Framer Motion
 import { motion } from 'framer-motion';
 
-export default function Heading({ className = "", eyebrow = "", title = "This is a Heading", text = "" }) {
+export default function Heading({ hasAnimation = true, level = "h2", className = "", eyebrow = "", title = "This is a Heading", text = "" }) {
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -34,21 +34,28 @@ export default function Heading({ className = "", eyebrow = "", title = "This is
 
         <motion.div
             className={`heading ${className}`}
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            variants={hasAnimation ? containerVariants : null}
+            initial={hasAnimation ? "hidden" : null}
+            whileInView={hasAnimation ? "visible" : null}
+            viewport={{ once: true, amount: 0.45 }}
         >
 
             {eyebrow && (
+
                 <motion.div className="eyebrow" variants={itemVariants}>
 
                     <span>{eyebrow}</span>
 
                 </motion.div>
+
             )}
 
-            <motion.h2 variants={itemVariants}>{title}</motion.h2>
+            {level === "h1" && <motion.h1 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h1>}
+            {level === "h2" && <motion.h2 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h2>}
+            {level === "h3" && <motion.h3 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h3>}
+            {level === "h4" && <motion.h4 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h4>}
+            {level === "h5" && <motion.h5 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h5>}
+            {level === "h6" && <motion.h6 variants={itemVariants} className={title.endsWith('.') ? 'hasFullStop' : undefined}>{title}</motion.h6>}
 
             {text && (
 

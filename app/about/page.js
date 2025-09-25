@@ -1,0 +1,73 @@
+// Components
+import Banner from "@/components/ui/reusables/banner";
+import VideoRow from "@/components/ui/reusables/video-row";
+import WhoWeAre from "@/components/pages/about/who-we-are";
+import ComparePaymentProvidersSection from "@/components/ui/sections/compare-payment-providers-section";
+import TestimonialsSection from "@/components/ui/sections/testimonials-section";
+import TextSlider from "@/components/sliders/text-slider";
+import DualCols from "@/components/ui/reusables/dual-columns";
+import ContactSection from "@/components/ui/sections/contact-section";
+
+// Images
+const bannerImage = "/covers/about-cover.jpeg";
+
+// Videos
+const videoSrc = "/videos/about-video.mp4";
+const videoPoster = "/videos/posters/about-video-poster.webp";
+
+export default function AboutPage() {
+
+    return (
+
+        <>
+
+            <Banner
+                eyebrow="About Us"
+                heading="Powering progress, one payment at a time"
+                backgroundImage={bannerImage}
+                buttonTextOne="Learn more"
+                buttonTextLinkOne="#video"
+                buttonClassOne="primary"
+                buttonTextTwo="Get started"
+                buttonLinkTwo="/contact"
+            />
+
+            <VideoRow
+                id="video"
+                videoSrc={videoSrc}
+                type="video/mp4"
+                poster={videoPoster}
+                overlayBanner={true}
+            />
+
+            <WhoWeAre />
+
+            <ComparePaymentProvidersSection />
+
+            <TestimonialsSection />
+
+            <TextSlider />
+
+            <DualCols
+                containerClassName="rowReverse"
+                headingLevel="h3"
+                eyebrow="OUR DEDICATED APPLICATION"
+                title="Prompt Pay Capital, developers of SyncVue"
+                text="Built initially for wholesale clients, SyncVue links your payment terminal with accounting platforms like QuickBooks, Sage, and Xero. It makes it easy to view invoices, track payments, and collect instantly at the terminal, saving our customers hours of paperwork at the end of the day and thousands in missed payments."
+                image="/images/misc/syncvue-logo.png"
+                imageAlt="Syncvue application screenshot"
+                btnOneText="Learn more"
+                btnOneLink="/syncvue"
+                btnOneClass="primary hasAnimation"
+                btnTwoText="Get a demo"
+                btnTwoLink="/contact"
+                btnTwoClass="light"
+            />
+
+            <ContactSection />
+
+        </>
+
+    )
+
+}

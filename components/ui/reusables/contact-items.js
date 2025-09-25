@@ -1,59 +1,107 @@
+"use client";
+
+// Motion
+import { motion } from 'framer-motion';
+
 // Icons
-import { PhoneFilled, Email } from '@carbon/react/icons';
+import { PhoneFilled, Email, Time, Location } from '@carbon/react/icons';
 
 // Styles
 import styles from "@/styles/ui/reusables/contact-items.module.scss";
 
-export default function ContactItems({ className = "" }) {
+export default function ContactItems({ className = "", hasAddress = false, hasHours = false }) {
 
-    const email = "info@promptpaycapital.com"
-    const phone = "+44 (0)203 355 5615"
+    const contactItems = [
+        {
+            id: 1,
+            class: "email",
+            icon: <Email />,
+            info: "info@promptpaycapital.com",
+            link: "mailto:info@promptpaycapital.com"
+        },
+        {
+            id: 2,
+            class: "phone",
+            icon: <PhoneFilled />,
+            info: "+44 (0)203 355 5615",
+            link: "tel:+442033555615"
+        },
+        {
+            id: 3,
+            class: `hours ${hasHours ? "" : "hidden"}`,
+            icon: <Time />,
+            info: "Mon-Fri 9am-5pm",
+            link: null
+        },
+        {
+            id: 4,
+            class: `address ${hasAddress ? "" : "hidden"}`,
+            icon: <Location />,
+            info: "123 Business St, London, UK",
+            link: null
+        }
+    ]
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.15
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {
+            opacity: 0,
+            y: 30
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.25, 0.46, 0.45, 0.94]
+            }
+        }
+    };
 
     return (
 
-        <div className={`${styles.contactItems} ${className ? className : undefined}`}>
+        <motion.div
+            className={`${styles.contactItems} ${className ? className : undefined}`}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+        >
 
-            <div className={styles.contactItem}>
+            {contactItems.map((item) => (
 
-                <a href={`mailto:${email}`}></a>
+                <motion.div key={item.id} className={`${styles.contactItem} ${item.class ? item.class : undefined}`} variants={itemVariants}>
 
-                <div className={styles.contactItemIcon}>
+                    {item.link && <a href={item.link} />}
 
-                    <Email />
+                    <div className={styles.contactItemIcon}>
 
-                </div>
+                        {item.icon}
 
-                <div className={styles.contactItemContent}>
+                    </div>
 
-                    <h4>Email Address</h4>
+                    <div className={styles.contactItemContent}>
 
-                    <span>{email}</span>
+                        <h4>{item.id === 1 ? "Email Address" : item.id === 2 ? "Phone Number" : item.id === 3 ? "Working Hours" : item.id === 4 ? "Office Address" : null}</h4>
 
-                </div>
+                        <span>{item.info}</span>
 
-            </div>
+                    </div>
 
-            <div className={styles.contactItem}>
+                </motion.div>
 
-                <a href={`tel:${phone}`} target="_blank"></a>
+            ))}
 
-                <div className={styles.contactItemIcon}>
-
-                    <PhoneFilled />
-
-                </div>
-
-                <div className={styles.contactItemContent}>
-
-                    <h4>Phone Us</h4>
-
-                    <span>{phone}</span>
-
-                </div>
-
-            </div>
-
-        </div>
+        </motion.div>
 
     )
 }

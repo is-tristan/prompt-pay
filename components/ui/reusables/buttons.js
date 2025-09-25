@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight } from '@carbon/react/icons';
 
 export default function Buttons({
+    className = "",
     btnOneText = "Get Started",
     btnOneLink = "#",
     btnOneClass = "primary",
@@ -17,7 +18,7 @@ export default function Buttons({
 
     return (
 
-        <div className={`buttons ${hiddenMobile ? "hidden-s hidden-m" : undefined} ${hiddenDesktop ? "hidden-l hidden-xl" : undefined}`}>
+        <div className={`buttons ${className ? className : undefined} ${hiddenMobile ? "hidden-s hidden-m" : undefined} ${hiddenDesktop ? "hidden-l hidden-xl" : undefined}`}>
 
             <Link className={`btn ${btnOneClass}`} href={btnOneLink} target={target}>
 
@@ -31,17 +32,19 @@ export default function Buttons({
 
             </Link>
 
-            {btnTwoText && <Link className={`btn ${btnTwoClass}`} href={btnTwoLink} target={target}>
+            {btnTwoText &&
 
-                <span>{btnTwoText}</span>
+                <Link className={`btn ${btnTwoClass}`} href={btnTwoLink} target={target}>
 
-                <div className="btnIcon">
+                    <span>{btnTwoText}</span>
 
-                    <ArrowUpRight />
+                    <div className="btnIcon">
 
-                </div>
+                        <ArrowUpRight />
 
-            </Link>}
+                    </div>
+
+                </Link>}
 
         </div>
 
