@@ -1,5 +1,4 @@
 // Components
-
 import WhoWeAre from "@/components/pages/about/who-we-are";
 import TextSlider from "@/components/sliders/text-slider";
 import Banner from "@/components/ui/reusables/banner";
