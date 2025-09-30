@@ -59,7 +59,7 @@ export default function HomeBanner() {
           onLoadStart={handleVideoLoadStart}
           onWaiting={() => setIsVideoLoading(true)}
           onPlaying={() => setIsVideoLoading(false)}
-          poster="/images/prompt-pay-banner-video-poster.webp"
+          poster="/videos/posters/prompt-pay-banner-video-poster.webp"
         >
           <source src="/videos/prompt-pay-banner-video.mp4" type="video/mp4" />
         </video>
