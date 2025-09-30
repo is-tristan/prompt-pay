@@ -1,0 +1,54 @@
+.checkListitems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .checkListItem {
+        display: flex;
+        gap: 0.5rem;
+
+        @media (width >=768px) and (width <1200px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    .checkListIcon {
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+        color: var(--primary);
+
+        @media (width >=768px) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .checkListContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        h3 {
+            @media all {
+                font-size: 0.875rem;
+            }
+
+            @media (width >=768px) {
+                margin-top: 0.15rem;
+                font-size: 1.25rem;
+            }
+        }
+
+        p {
+            line-height: 150%;
+        }
+    }
+}

@@ -1,0 +1,89 @@
+.productNav {
+    margin-top: calc(var(--headerHeight) * 0.66);
+
+    .productNavContainer {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 1rem;
+        padding: 1rem 0;
+
+        @media (width < 1200px) {
+            overflow-y: hidden;
+            overflow-x: auto;
+            scrollbar-color: rgba(var(--lightRgb), 0.25) transparent;
+            scrollbar-width: thin;
+            scroll-snap-type: x mandatory;
+        }
+
+        @media (width >=768px) {
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        @media (width >=1200px) {
+            gap: 3rem;
+            max-width: max-content;
+            padding: 5rem 0 0;
+        }
+
+        >div {
+            flex-basis: 100%;
+            min-width: 7.5rem;
+
+            @media (width >=768px) {
+                flex: 1 1 auto;
+            }
+
+            @media (width >=1200px) {
+                flex: 1 1 auto;
+            }
+        }
+
+        .productNavLink {
+            display: flex;
+            flex-direction: column;
+            gap: 0.33rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 0.75rem;
+            width: 100%;
+            scroll-snap-align: center;
+            transition: var(--ease);
+
+            @media (width >=768px) {
+                font-size: 0.875rem;
+                gap: 0.5rem;
+                width: 100%;
+                min-width: unset;
+                padding: 0.5rem;
+            }
+
+            .productNavImage {
+                img {
+                    @media (width >=768px) {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+                }
+            }
+
+            span {
+                transition: var(--ease);
+            }
+
+            &.active,
+            &:hover {
+                color: var(--primary);
+            }
+
+            &:hover {
+                transform: translateY(-0.15rem);
+            }
+        }
+    }
+
+}

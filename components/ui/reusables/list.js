@@ -1,32 +1,24 @@
 // Styles
-import styles from "@/styles/ui/reusables/list.module.scss";
 
 // Icons
-import { CheckmarkFilled } from '@carbon/react/icons';
+import { CheckmarkFilled } from "@carbon/react/icons";
+import styles from "@/styles/ui/reusables/list.module.scss";
 
 export default function List({ stylised = "false", items = [] }) {
+  return (
+    <div
+      className={`${styles.list} ${stylised ? `${styles.stylised}` : undefined}`}
+      role="list"
+    >
+      {items.map((item, index) => (
+        <div className={styles.listItem} key={index} role="listitem">
+          <div className={styles.listIcon} aria-hidden="true">
+            <CheckmarkFilled color="var(--primary)" size="20F" />
+          </div>
 
-    return (
-
-        <div className={`${styles.list} ${stylised ? `${styles.stylised}` : undefined}`} role="list">
-
-            {items.map((item, index) => (
-
-                <div className={styles.listItem} key={index} role="listitem">
-
-                    <div className={styles.listIcon} aria-hidden="true">
-
-                        <CheckmarkFilled color="var(--primary)" size="20F" />
-
-                    </div>
-
-                    <p className={styles.listText}>{item}</p>
-
-                </div>
-
-            ))}
-
+          <p className={styles.listText}>{item}</p>
         </div>
-
-    )
+      ))}
+    </div>
+  );
 }

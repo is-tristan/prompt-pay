@@ -1,19 +1,19 @@
 // Styles
 import "@/styles/pages/home.scss";
 
+import CtaRow from "@/components/pages/home/cta-section";
+import FaqsSection from "@/components/pages/home/faqs-section";
+import FeaturedSection from "@/components/pages/home/featured-section";
+import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
+import HomeTabs from "@/components/pages/home/tabs-section";
 // Components
 import VideoBanner from "@/components/pages/home/video-banner";
-import HomeTabs from "@/components/pages/home/tabs-section";
-import DualCols from "@/components/ui/reusables/dual-columns";
 import TextSlider from "@/components/sliders/text-slider";
-import CtaRow from "@/components/pages/home/cta-section";
-import FeaturedSection from "@/components/pages/home/featured-section";
-import FaqsSection from "@/components/pages/home/faqs-section";
+import DualCols from "@/components/ui/reusables/dual-columns";
+import ContactSection from "@/components/ui/sections/contact-section";
+import InstagramSection from "@/components/ui/sections/instagram-section";
 import LogoSlider from "@/components/ui/sections/logo-slider-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
-import InstagramSection from "@/components/ui/sections/instagram-section";
-import ContactSection from "@/components/ui/sections/contact-section";
-import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
 
 export default function Home() {
   return (

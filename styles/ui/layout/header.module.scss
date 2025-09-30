@@ -1,3 +1,6 @@
+$headerTransition: all 0.15s ease-in-out;
+$submenuTransition: all 0.15s ease-in-out;
+
 @mixin submenu() {
     display: flex;
     flex-direction: column;
@@ -13,10 +16,8 @@
     left: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.15s ease;
+    transition: $submenuTransition;
 }
-
-$headerTransition: all 0.15s ease-in-out;
 
 .header {
     width: 100%;
@@ -49,6 +50,15 @@ $headerTransition: all 0.15s ease-in-out;
             .logo img {
                 height: calc(var(--headerHeight) * 0.4);
             }
+        }
+    }
+
+    &.productHeader {
+        top: 0;
+        border-bottom: 2px solid rgba(var(--lightRgb), 0.1);
+
+        &.active {
+            border-color: transparent;
         }
     }
 }
@@ -101,7 +111,8 @@ $headerTransition: all 0.15s ease-in-out;
     .navItem {
         position: relative;
 
-        &.hasSubMenu {
+        &.hasSubMenu,
+        &.hasMegaMenu {
             &::after {
                 content: "";
                 display: inline-block;
@@ -114,13 +125,21 @@ $headerTransition: all 0.15s ease-in-out;
                 border-left: 0.35rem solid transparent;
             }
 
-            &:hover,
-            &:focus-within {
-                .subMenu {
+            &:hover {
+                .subMenu,
+                .megaMenu {
                     top: 100%;
-                    left: 0;
                     opacity: 1;
                     visibility: visible;
+                }
+            }
+
+            &.hasMegaMenu {
+                position: unset;
+                &:hover {
+                    .megaMenu {
+                        top: calc(100% - 0.5rem);
+                    }
                 }
             }
         }
@@ -138,4 +157,24 @@ $headerTransition: all 0.15s ease-in-out;
 
 .subMenu {
     @include submenu();
+}
+
+.megaMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: max-content;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    transition: $headerTransition;
+    transition-delay: 0.15s;
+
+    &:hover {
+        transition-delay: 0.33s;
+    }
 }

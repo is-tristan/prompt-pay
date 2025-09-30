@@ -1,7 +1,9 @@
 "use client";
+
 // Next
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 // Styles
 import styles from "@/styles/ui/layout/header.module.scss";
@@ -9,7 +11,8 @@ import mobileStyles from "@/styles/ui/layout/mobile-menu.module.scss";
 
 // Components
 import Buttons from "@/components/ui/reusables/buttons";
-import MobileMenu from "@/components/ui/layout/mobile-menu";
+import MobileMenu from "@/components/ui/layout/header-parts/mobile-menu";
+import ProductMenu from "@/components/ui/layout/header-parts/product-menu";
 
 import { useState } from "react";
 
@@ -17,15 +20,14 @@ export default function Header() {
 
     const logo = "/logos/logo-light.svg";
 
-    const links = [
+    const desktopLinks = [
         { href: "/", label: "Home" },
         {
-            href: "#", label: "Products", class: "hasSubMenu", sublinks: [
-                { href: "/products/cover-flex", label: "Cover Flex" },
-                { href: "/products/cover-flex", label: "Cover Flex" },
-                { href: "/products/cover-flex", label: "Cover Flex" },
-                { href: "/products/cover-flex", label: "Cover Flex" },
-                { href: "/products/cover-flex", label: "Cover Flex" },
+            href: "#",
+            label: "Products",
+            class: "hasMegaMenu",
+            megaMenu: [
+                { component: "ProductMenu" }
             ]
         },
         { href: "/careers", label: "Careers" },
@@ -56,9 +58,13 @@ export default function Header() {
         onHeaderScroll();
     });
 
+    const pathname = usePathname();
+    const isProductPage = pathname.includes("products");
+    const headerClass = isProductPage ? styles.productHeader : "";
+
     return (
 
-        <header id="header" className={styles.header} role="banner">
+        <header id="header" className={`header ${styles.header} ${headerClass}`} role="banner">
 
             <div className={`container ${styles.headerContainer} light`}>
 
@@ -74,7 +80,7 @@ export default function Header() {
 
                 <nav className={`hidden-s hidden-m ${styles.desktopMenu} ${styles.nav}`} role="navigation" aria-label="Main Navigation">
 
-                    {links.map((link, index) => (
+                    {desktopLinks.map((link, index) => (
 
                         <div className={`${styles.navItem} ${link.class ? styles[link.class] : ""}`} key={index}>
 
@@ -84,17 +90,17 @@ export default function Header() {
 
                             </Link>
 
-                            {link.sublinks && (
+                            {link.megaMenu && (
 
-                                <div className={styles.subMenu}>
+                                <div className={`${styles.megaMenu}`}>
 
-                                    {link.sublinks.map((sublink, subIndex) => (
+                                    {link.megaMenu.map((menuItem, subIndex) => (
 
-                                        <Link href={sublink.href} className={styles.subMenuLink} key={subIndex}>
+                                        <div key={subIndex}>
 
-                                            {sublink.label}
+                                            {menuItem.component === "ProductMenu" && <ProductMenu />}
 
-                                        </Link>
+                                        </div>
 
                                     ))}
 
@@ -132,7 +138,6 @@ export default function Header() {
             </div>
 
             <MobileMenu
-                menuItems={links}
                 isOpen={isMobileMenuOpen}
                 onClose={handleMobileMenuClose}
             />
