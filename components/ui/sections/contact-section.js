@@ -13,7 +13,7 @@ const dotsBottomLeft = "/backgrounds/background-dots-bottom-left.png";
 import styles from "@/styles/ui/sections/contact-section.module.scss";
 
 export default function ContactSection({
-  className = "",
+  className = "dualCols",
   eyebrow = "GET IN TOUCH TODAY",
   title = "Speak to an expert",
   text = "Discover enhanced payment solutions and start lowering your fees today.",

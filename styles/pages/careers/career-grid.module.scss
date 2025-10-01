@@ -1,0 +1,74 @@
+.careerGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+
+    .careerGridItem {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1.5rem;
+        border: 2px solid rgba(var(--lightRgb), 0.1);
+        border-radius: var(--colRadius);
+        background: var(--darkAlt);
+        transition: var(--ease);
+
+        @media (width >=768px) {
+            padding: 3rem;
+        }
+
+        &:hover {
+            border-color: rgba(var(--lightRgb), 0.2);
+
+            @media (hover: hover) and (pointer: fine) {
+                transform: translateY(-0.15rem);
+            }
+        }
+    }
+
+    .careerGridItemHeading {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h3 {
+            @media (width >=768px) {
+                font-size: 1.25rem;
+            }
+        }
+
+        p {
+            line-height: 155%;
+            text-wrap: balance;
+        }
+    }
+
+    .careerGridItemMeta {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+
+        @media (width >=768px) {
+            gap: 1rem;
+        }
+
+        .careerMetaItem {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(var(--lightRgb), 0.85);
+
+            @media (width >=768px) {
+                font-size: 0.875rem;
+            }
+
+            svg {
+                fill: var(--primary);
+            }
+        }
+    }
+}

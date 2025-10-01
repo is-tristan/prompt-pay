@@ -1,0 +1,105 @@
+.careerSingleSection {
+    max-width: 850px;
+    margin: 0 auto;
+
+    @media all {
+        gap: 1rem;
+    }
+
+    @media (width >= 1200px) {
+        margin-top: calc(var(--headerHeight) * -.5);
+    }
+}
+
+.careerContentHeader {
+
+    @media all {
+        padding-bottom: 0 !important;
+    }
+
+    .careerGridItemMeta {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        background: var(--darkAlt);
+        padding: 1.25rem;
+        border-radius: var(--colRadius);
+
+        @media (width >=768px) {
+            gap: 1rem;
+        }
+
+        .careerMetaItem {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(var(--lightRgb), 0.85);
+
+            @media (width >=768px) {
+                font-size: 0.875rem;
+            }
+
+            svg {
+                fill: var(--primary);
+            }
+        }
+    }
+}
+
+.careerContentContainer {
+    @media (width >=768px) {
+        padding-top: 1rem;
+    }
+}
+
+.careerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+        margin-bottom: 0;
+
+        strong {
+            font-weight: 700;
+        }
+    }
+
+    h2,
+    h3 {
+        @media all {
+            font-size: 1.25rem;
+        }
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+
+        li::marker {
+            color: var(--primary);
+        }
+    }
+
+    ul {
+        list-style-type: square;
+    }
+}
+
+.careerContactSection {
+    background: var(--darkAlt);
+
+    h2 {
+        color: var(--primary);
+    }
+
+    .careerContactContainer {
+        @media (width >=768px) {
+           gap: 2rem;
+        }
+    }
+}

@@ -42,7 +42,7 @@ export default function Heading({
 
   return (
     <motion.div
-      key={hasAnimation ? pathname : undefined} // Force re-animation on page changes when animations are enabled
+      key={hasAnimation ? pathname : undefined}
       className={`heading ${className}`}
       variants={hasAnimation ? containerVariants : null}
       initial={hasAnimation ? "hidden" : null}

@@ -2,11 +2,8 @@
 import Banner from "@/components/ui/reusables/banner";
 import DualCols from "@/components/ui/reusables/dual-columns";
 import VideoRow from "@/components/ui/reusables/video-row";
-import TextSlider from "@/components/sliders/text-slider";
+import CareersGrid from "@/components/pages/careers/career-grid";
 import ContactSection from "@/components/ui/sections/contact-section";
-
-// Styles
-import "@/styles/pages/careers.scss";
 
 // Images
 const bannerImage = "/covers/careers-cover.jpg";
@@ -54,7 +51,7 @@ export default function CareersPage() {
                     "Quality Perks",
                 ]}
                 btnOneText="View careers"
-                btnOneLink="#careers"
+                btnOneLink="#openPositions"
                 btnOneClass="primary hasAnimation"
                 btnTwoText="About Us"
                 btnTwoLink="/about"
@@ -63,7 +60,7 @@ export default function CareersPage() {
                 imageAlt="Careers at Prompt Pay Capital"
             />
 
-            <TextSlider />
+            <CareersGrid />
 
             <ContactSection />
 
