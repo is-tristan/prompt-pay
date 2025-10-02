@@ -1,0 +1,58 @@
+[
+    {
+        "worldpay": [
+            {
+                "id": 1,
+                "image": "/logos/external/worldpay-logo.svg",
+                "alt": "Worldpay Logo"
+            },
+            {
+                "id": 2,
+                "image": "/logos/external/worldpay-logo.svg",
+                "alt": "Worldpay Logo"
+            },
+            {
+                "id": 3,
+                "image": "/logos/external/worldpay-logo.svg",
+                "alt": "Worldpay Logo"
+            },
+            {
+                "id": 4,
+                "image": "/logos/external/worldpay-logo.svg",
+                "alt": "Worldpay Logo"
+            },
+            {
+                "id": 5,
+                "image": "/logos/external/worldpay-logo.svg",
+                "alt": "Worldpay Logo"
+            }
+        ],
+        "clover": [
+            {
+                "id": 1,
+                "image": "/logos/external/clover-logo.svg",
+                "alt": "Clover Logo"
+            },
+            {
+                "id": 2,
+                "image": "/logos/external/clover-logo.svg",
+                "alt": "Clover Logo"
+            },
+            {
+                "id": 3,
+                "image": "/logos/external/clover-logo.svg",
+                "alt": "Clover Logo"
+            },
+            {
+                "id": 4,
+                "image": "/logos/external/clover-logo.svg",
+                "alt": "Clover Logo"
+            },
+            {
+                "id": 5,
+                "image": "/logos/external/clover-logo.svg",
+                "alt": "Clover Logo"
+            }
+        ]
+    }
+]

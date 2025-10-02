@@ -6,7 +6,7 @@ import CareersGrid from "@/components/pages/careers/career-grid";
 import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
-const bannerImage = "/covers/careers-cover.jpg";
+const bannerImage = "/covers/careers-cover.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.png";
 
 // Videos

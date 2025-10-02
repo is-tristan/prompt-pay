@@ -44,7 +44,7 @@ export default function ContactItems({
       id: 4,
       class: `address ${hasAddress ? "" : "hidden"}`,
       icon: <Location />,
-      info: "123 Business St, London, UK",
+      info: "Based in: The United Kingdom",
       link: null,
     },
   ];
@@ -75,41 +75,31 @@ export default function ContactItems({
   };
 
   return (
-    <motion.div
-      key={pathname} // Force re-animation on page changes
-      className={`${styles.contactItems} ${className ? className : undefined}`}
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-    >
+
+    <motion.div key={pathname} className={`${styles.contactItems} ${className ? className : undefined}`} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+
       {contactItems.map((item) => (
-        <motion.div
-          key={item.id}
-          className={`${styles.contactItem} ${item.class ? item.class : undefined}`}
-          variants={itemVariants}
-        >
+
+        <motion.div key={item.id} className={`${styles.contactItem} ${item.class ? item.class : undefined}`} variants={itemVariants} >
+
           {item.link && <a href={item.link} />}
 
           <div className={styles.contactItemIcon}>{item.icon}</div>
 
           <div className={styles.contactItemContent}>
-            <h4>
-              {item.id === 1
-                ? "Email Address"
-                : item.id === 2
-                  ? "Phone Number"
-                  : item.id === 3
-                    ? "Working Hours"
-                    : item.id === 4
-                      ? "Office Address"
-                      : null}
-            </h4>
+
+            <h4> {item.id === 1 ? "Email Address" : item.id === 2 ? "Phone Number" : item.id === 3 ? "Working Hours" : item.id === 4 ? "Office Address" : null} </h4>
 
             <span>{item.info}</span>
+
           </div>
+
         </motion.div>
+
       ))}
+
     </motion.div>
+
   );
+
 }

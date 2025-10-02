@@ -1,0 +1,114 @@
+.logoSliderRow {
+    overflow: unset;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+
+$animationSpeed: 40s;
+$mobileAnimationSpeed: 10s;
+
+.logoSliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    scale: 1.015;
+
+    @media (width >=768px) {
+        height: 5rem;
+    }
+
+    &.logoSliderOne {
+        background: var(--light);
+        color: var(--dark);
+        z-index: 1;
+        rotate: 5deg;
+        margin-top: 0.5rem;
+
+        @media (width >=768px) {
+            margin-top: 0.25rem;
+        }
+
+        .logoSliderTrack {
+            animation: scroll linear infinite;
+            animation-duration: $mobileAnimationSpeed;
+
+            @media (width >=768px) {
+                animation-duration: $animationSpeed;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        }
+    }
+
+    &.logoSliderTwo {
+        background: var(--darkAlt);
+        color: var(--light);
+        z-index: 2;
+        margin-top: 2.5rem;
+        rotate: -5deg;
+
+        @media (width >=768px) {
+            margin-top: 0;
+        }
+
+        .logoSliderTrack {
+            animation: scrollReverse linear infinite;
+            justify-content: flex-end;
+            animation-duration: $mobileAnimationSpeed;
+
+            @media (width >=768px) {
+                animation-duration: $animationSpeed;
+            }
+
+            @keyframes scrollReverse {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+        }
+    }
+}
+
+.logoSliderTrack {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+
+    .logoSlideItem {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        white-space: nowrap;
+        gap: 1rem;
+        padding-left: 1rem;
+        min-width: max-content;
+
+        span {
+            font-size: 0.875rem;
+            font-weight: 500;
+
+            @media (width >=768px) {
+                font-size: 1rem;
+            }
+        }
+    }
+}

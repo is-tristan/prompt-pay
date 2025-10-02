@@ -2,7 +2,7 @@
 import ProductDashboard from "@/components/pages/products/product-dashboard";
 import { ProductNav } from "@/components/pages/products/product-nav";
 import ProductSection from "@/components/pages/products/product-section";
-import TextSlider from "@/components/sliders/text-slider";
+import TextSlider from "@/components/sliders/logo-slider";
 import Buttons from "@/components/ui/reusables/buttons";
 import Heading from "@/components/ui/reusables/heading";
 import ComparePaymentProviders from "@/components/ui/sections/compare-payment-providers-section";

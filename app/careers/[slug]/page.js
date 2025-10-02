@@ -11,7 +11,7 @@ import styles from "@/styles/pages/careers/career-single.module.scss";
 import { Location, FinancialAssets, Result } from "@carbon/react/icons";
 
 // Images
-const careerSingleCover = "/covers/career-single-cover.jpg";
+const careerSingleCover = "/covers/career-single-cover.webp";
 
 export async function generateStaticParams() {
     try {

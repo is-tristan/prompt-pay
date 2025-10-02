@@ -5,7 +5,7 @@ import Banner from "@/components/ui/reusables/banner";
 import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
-const bannerImage = "/covers/contact-us-cover.jpg";
+const bannerImage = "/covers/contact-us-cover.webp";
 
 export default function ContactPage() {
   return (

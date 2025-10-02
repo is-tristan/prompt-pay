@@ -1,6 +1,8 @@
 // Next
+import Link from "next/link";
 import Image from "next/image";
 import Globe from "@/components/misc/globe";
+
 // Components
 import Heading from "../../ui/reusables/heading";
 import Stats from "../../ui/reusables/stats";
@@ -10,10 +12,15 @@ const WorldPayLogo = "/logos/external/worldpay-logo.svg";
 const CloverLeafLogo = "/logos/external/clover-logo.svg";
 
 export default function ctaRow() {
+
   return (
+
     <section className="row ctaRow">
+
       <div className="container dualCols">
+
         <div className="col contentCol">
+
           <Heading
             className="hasFullStop"
             eyebrow="BUILDING PARTNERSHIPS"
@@ -22,6 +29,7 @@ export default function ctaRow() {
           />
 
           <div className="statsContainer">
+
             <Stats
               countFrom={0}
               countTo={3.2}
@@ -47,50 +55,67 @@ export default function ctaRow() {
               title="Report smoother payments <span className='primary'>*</span>"
             />
           </div>
+
         </div>
 
         <div className="col globeCol">
+
           <div className="globeContainer">
+
             <Globe />
+
           </div>
 
           <div className="floatingText floatingTextOne">
-            <a
-              href="https://www.worldpay.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
 
-            <Image
-              src={WorldPayLogo}
-              alt="Worldpay Logo"
-              width={64}
-              height={32}
-              loading="lazy"
-            />
+            <Link href="/products/worldpay-dx4000" />
 
-            <p>Learn more about our partnership with Worldpay.</p>
+            <div className="floatingTextHeader">
+
+              <Image
+                src={WorldPayLogo}
+                alt="Worldpay Logo"
+                width={64}
+                height={32}
+                loading="lazy"
+              />
+
+              <span>Gateway</span>
+
+            </div>
+
+            <p>Learn More</p>
+
           </div>
 
           <div className="floatingText floatingTextTwo">
-            <a
-              href="https://www.clover.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            ></a>
 
-            <Image
-              src={CloverLeafLogo}
-              alt="Cloverleaf Logo"
-              width={64}
-              height={32}
-              loading="lazy"
-            />
+            <Link href="/products/clover-flex" />
+            
+            <div className="floatingTextHeader">
 
-            <p>Learn more about our partnership with Clover.</p>
+              <Image
+                src={CloverLeafLogo}
+                alt="Cloverleaf Logo"
+                width={64}
+                height={32}
+                loading="lazy"
+              />
+
+              <span>Gateway</span>
+
+            </div>
+
+            <p>Learn More</p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
+
   );
+
 }

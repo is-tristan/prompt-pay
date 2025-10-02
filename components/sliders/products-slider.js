@@ -59,7 +59,7 @@ export default function ProductSlider() {
       },
       768: {
         perPage: 1,
-        padding: { left: "7.5%", right: "7.5%" },
+        padding: { left: "10%", right: "10%" },
         gap: "0.75rem",
       },
     },

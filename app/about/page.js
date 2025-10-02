@@ -1,6 +1,6 @@
 // Components
 import WhoWeAre from "@/components/pages/about/who-we-are";
-import TextSlider from "@/components/sliders/text-slider";
+import TextSlider from "@/components/sliders/logo-slider";
 import Banner from "@/components/ui/reusables/banner";
 import DualCols from "@/components/ui/reusables/dual-columns";
 import VideoRow from "@/components/ui/reusables/video-row";
@@ -9,7 +9,7 @@ import ContactSection from "@/components/ui/sections/contact-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
 
 // Images
-const bannerImage = "/covers/about-cover.jpeg";
+const bannerImage = "/covers/about-cover.webp";
 
 // Videos
 const videoSrc = "/videos/about-video.mp4";
