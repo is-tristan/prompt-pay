@@ -22,49 +22,37 @@ export default function Footer() {
 
           <FooterNav
             className={styles.footerNavOne}
-            title="Useful links"
+            title="Clover Products"
             footerLinks={[
-              { id: 1, text: "Home", link: "/" },
-              { id: 2, text: "Products", link: "/#products" },
-              { id: 3, text: "Features", link: "/#features" },
-              { id: 4, text: "Testimonials", link: "/#testimonials" },
-              { id: 5, text: "Contact", link: "/#contact" },
+              { id: 1, text: "Clover Flex", link: "/products/clover-flex" },
+              { id: 2, text: "Clover Flex Pocket", link: "/products/clover-flex-pocket" },
+              { id: 3, text: "Clover Mini", link: "/products/clover-mini" },
+              { id: 4, text: "Clover Station Duo", link: "/products/clover-station-duo" },
+              { id: 5, text: "Clover Station Solo", link: "/products/clover-station-solo" },
             ]}
           />
 
           <FooterNav
             className={styles.footerNavTwo}
-            title="Our products"
+            title="Worldpay Products"
             footerLinks={[
-              { id: 1, text: "Clover Flex", link: "/products/clover-flex" },
-              { id: 2, text: "Clover Mini", link: "/products/clover-mini" },
-              { id: 3, text: "Clover Duo", link: "/products/clover-duo" },
-              { id: 4, text: "WP DX4000", link: "/products/wp-dx4000" },
-              { id: 5, text: "All Products", link: "/products" },
+              { id: 1, text: "Worldpay DX4000", link: "/products/worldpay-dx4000" },
+              { id: 2, text: "Worldpay DX8000", link: "/products/worldpay-dx8000" },
+              { id: 3, text: "Worldpay 360 Lite", link: "/products/worldpay-360-lite" },
+              { id: 4, text: "Worldpay 360 Standard", link: "/products/worldpay-360-standard" },
+              { id: 5, text: "Worldpay 360 Pro", link: "/products/worldpay-360-pro" },
             ]}
           />
 
           <FooterNav
             className={styles.footerNavThree}
-            title="Important links"
+            title="Explore"
             footerLinks={[
-              { id: 1, text: "Privacy Policy", link: "/legal/privacy-policy" },
-              {
-                id: 2,
-                text: "Refunds & Cancellations",
-                link: "/legal/refunds-and-cancellations",
-              },
-              {
-                id: 3,
-                text: "Subject Access Request (SAR)",
-                link: "/legal/subject-access-request",
-              },
-              {
-                id: 4,
-                text: "Terms & Conditions",
-                link: "/legal/terms-and-conditions",
-              },
-              { id: 5, text: "Disclaimer", link: "/legal/disclaimer" },
+              { id: 1, text: "About", link: "/about" },
+              { id: 2, text: "Careers", link: "/careers" },
+              { id: 3, text: "Contact", link: "/contact" },
+              { id: 4, text: "Privacy Policy", link: "/legal/privacy-policy" },
+              { id: 5, text: "Cookie Policy", link: "/legal/cookie-policy" },
             ]}
           />
 
