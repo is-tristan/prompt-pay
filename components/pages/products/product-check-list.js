@@ -4,13 +4,16 @@
 import { CheckmarkFilled } from "@carbon/react/icons";
 
 // Framer Motion
+
 import { motion } from "framer-motion";
+
 // Next
 import { usePathname } from "next/navigation";
+
 // Styles
 import styles from "@/styles/pages/products/product-checklist.module.scss";
 
-export default function Productitems({ items = [] }) {
+export default function Productitems({ items = [], hasAnimation = true }) {
   const pathname = usePathname();
   const sanitizedItems = Array.isArray(items) ? items.filter(Boolean) : [];
 
@@ -44,9 +47,9 @@ export default function Productitems({ items = [] }) {
     <motion.div
       key={pathname} // Force re-animation on page changes
       className={`${styles.checkListitems}`}
-      variants={sanitizedItems.length > 0 ? containerVariants : null}
-      initial={sanitizedItems.length > 0 ? "hidden" : undefined}
-      whileInView={sanitizedItems.length > 0 ? "visible" : undefined}
+      variants={hasAnimation && sanitizedItems.length > 0 ? containerVariants : undefined}
+      initial={hasAnimation && sanitizedItems.length > 0 ? "hidden" : undefined}
+      whileInView={hasAnimation && sanitizedItems.length > 0 ? "visible" : undefined}
       viewport={{ once: true, amount: 0.35 }}
     >
       {sanitizedItems.length > 0 &&
@@ -57,7 +60,9 @@ export default function Productitems({ items = [] }) {
             <motion.div
               key={itemKey}
               className={styles.checkListItem}
-              variants={itemVariants}
+              variants={hasAnimation ? itemVariants : undefined}
+              initial={hasAnimation ? undefined : false}
+              animate={hasAnimation ? undefined : false}
             >
               <div className={styles.checkListIcon}>
                 <CheckmarkFilled size={16} />

@@ -115,7 +115,7 @@ export default async function ProductPage({ params }) {
       }),
     }, {
       // Add caching
-      next: { 
+      next: {
         revalidate: 300 // Cache for 5 minutes
       }
     });
@@ -179,6 +179,7 @@ export default async function ProductPage({ params }) {
       <ProductNav currentUrl={currentUrl} categoryFilter={productCategory} />
 
       <ProductSection
+        hasAnimation={false}
         rowClassName={"productHeader"}
         image={productData.featuredImage?.node?.mediaItemUrl || ""}
         imageAlt={productData.featuredImage?.node?.altText || productData.title || ""}
@@ -190,7 +191,7 @@ export default async function ProductPage({ params }) {
       />
 
       <ProductSection
-        rowClassName={"secondRow"}
+        rowClassName={"hasImage"}
         containerClassName={"rowReverse noPaddingTop"}
         image={productData.productFields?.secondRow?.image?.node?.mediaItemUrl || ""}
         imageAlt={productData.productFields?.secondRow?.image?.node?.altText || productData.title || ""}

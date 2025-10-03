@@ -27,8 +27,6 @@ export default function CareersPage() {
                 buttonLinkTwo="/contact"
             />
 
-            <VideoRow />
-
             <DualCols
                 headingLevel="h2"
                 rowClassName="careersIntro"
@@ -49,6 +47,8 @@ export default function CareersPage() {
                 image={careersIntroImage}
                 imageAlt="Careers at Prompt Pay Capital"
             />
+
+            <VideoRow />
 
             <CareersGrid />
 

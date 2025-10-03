@@ -1,0 +1,7 @@
+.productHeader {
+    padding-top: var(--mobileHeaderHeight);
+
+    @media (width >=1200px) {
+        padding-top: var(--headerHeight);
+    }
+}

@@ -2,6 +2,7 @@
 
 // Next
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 // Components
@@ -26,13 +27,13 @@ export default function ProductMenu() {
 
                 <div className={`${styles.productMenuCol} ${styles.cloverCol}`}>
 
-                    <div className={styles.productMenuHeader}>
+                    <Link href="/products/clover" className={styles.productMenuHeader}>
 
                         <Image src={cloverLogo} width={80} height={32} alt="Clover logo" sizes={"80px"} className={styles.productMenuLogo} />
 
-                        <span className={styles.productMenuTitle}>Clover products</span>
+                        <span className={styles.productMenuTitle}>All Clover products</span>
 
-                    </div>
+                    </Link>
 
                     <ProductMenuItems currentUrl={pathname} categoryFilter={"clover"} />
 
@@ -40,13 +41,13 @@ export default function ProductMenu() {
 
                 <div className={`${styles.productMenuCol} ${styles.worldpayCol}`}>
 
-                    <div className={styles.productMenuHeader}>
+                    <Link href="/products/worldpay" className={styles.productMenuHeader}>
 
                         <Image src={worldpayLogo} width={80} height={32} alt="Worldpay logo" sizes={"80px"} className={styles.productMenuLogo} />
 
-                        <span className={styles.productMenuTitle}>Worldpay products</span>
+                        <span className={styles.productMenuTitle}>All Worldpay products</span>
 
-                    </div>
+                    </Link>
 
                     <ProductMenuItems currentUrl={pathname} categoryFilter={"worldpay"} />
 

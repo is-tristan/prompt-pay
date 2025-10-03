@@ -21,8 +21,11 @@ export default function DualCols({
   btnTwoClass = "secondary",
   hasList = false,
   listItems = [],
+  hasBtns = true,
 }) {
+
   return (
+    
     <section
       id={`dualCols-${Math.random().toString(36).substring(2, 11)}`}
       className={`row ${rowClassName ? rowClassName : undefined}`}
@@ -46,14 +49,18 @@ export default function DualCols({
 
           {hasList && <List items={listItems} />}
 
-          <Buttons
-            btnOneText={btnOneText}
-            btnOneLink={btnOneLink}
-            btnOneClass={btnOneClass}
-            btnTwoText={btnTwoText}
-            btnTwoLink={btnTwoLink}
-            btnTwoClass={btnTwoClass}
-          />
+          {hasBtns && (
+
+            <Buttons
+              btnOneText={btnOneText}
+              btnOneLink={btnOneLink}
+              btnOneClass={btnOneClass}
+              btnTwoText={btnTwoText}
+              btnTwoLink={btnTwoLink}
+              btnTwoClass={btnTwoClass}
+            />
+          )}
+
         </div>
 
         {image && (
