@@ -2,7 +2,7 @@
 import ProductSection from "./product-section";
 
 // Images
-const dashboardImage = "/images/misc/product-dashboard-mockup.png";
+const dashboardImage = "/images/misc/product-dashboard-mockup.webp";
 
 export default function ProductDashboard() {
   return (

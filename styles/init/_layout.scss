@@ -135,11 +135,15 @@ a:active {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
     height: max-content;
     position: relative;
     overflow: hidden;
+
+    @media (width >=768px) {
+        gap: 2rem;
+    }
 }
 
 // Container
@@ -276,7 +280,7 @@ a:active {
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
         &.rowReverse {
@@ -300,19 +304,11 @@ a:active {
         @media all {
             padding-top: 0;
         }
-
-        @media (width < 576px) {
-            padding-top: 1rem;
-        }
     }
 
     &.noPaddingBottom {
         @media all {
             padding-bottom: 0;
-        }
-
-        @media (width < 576px) {
-            padding-bottom: 1rem;
         }
     }
 

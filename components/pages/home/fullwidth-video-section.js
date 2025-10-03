@@ -50,13 +50,16 @@ export default function FullwidthVideoSection() {
   }, []);
 
   return (
+
     <section
       ref={sectionRef}
       className="row fullwidthVideoSection"
       aria-hidden="true"
       style={{ position: "relative" }}
     >
+
       {isVideoLoading && shouldLoadVideo && (
+
         <div
           style={{
             position: "absolute",
@@ -69,8 +72,11 @@ export default function FullwidthVideoSection() {
             justifyContent: "center",
           }}
         >
+
           <Loader loadingText="Loading video..." />
+
         </div>
+
       )}
 
       <video
@@ -99,7 +105,11 @@ export default function FullwidthVideoSection() {
         onPlaying={() => setIsVideoLoading(false)}
       >
         {shouldLoadVideo && <source src={videoSrc} type="video/mp4" />}
+
       </video>
+
     </section>
+
   );
+
 }

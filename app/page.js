@@ -8,17 +8,23 @@ import FeaturedSection from "@/components/pages/home/featured-section";
 import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
 import HomeTabs from "@/components/pages/home/tabs-section";
 import VideoBanner from "@/components/pages/home/video-banner";
-import TextSlider from "@/components/sliders/logo-slider";
 import DualCols from "@/components/pages/home/dashboard-section";
 import ContactSection from "@/components/ui/sections/contact-section";
 import LogoSlider from "@/components/ui/sections/logo-slider-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
 
 export default function Home() {
+
   return (
+
     <>
+
       <VideoBanner />
+
+      <CtaRow />
+
       <HomeTabs />
+
       <DualCols
         eyebrow="POWERFUL DASHBOARD"
         title="See your business at a glance, anytime"
@@ -38,10 +44,6 @@ export default function Home() {
           "1000+ customers",
         ]}
       />
-
-      <TextSlider />
-
-      <CtaRow />
 
       <FeaturedSection />
 

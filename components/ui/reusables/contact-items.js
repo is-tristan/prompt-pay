@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import styles from "@/styles/ui/reusables/contact-items.module.scss";
 
 export default function ContactItems({
+  hasAnimation = true,
   className = "",
   hasAddress = false,
   hasHours = false,
@@ -76,7 +77,7 @@ export default function ContactItems({
 
   return (
 
-    <motion.div key={pathname} className={`${styles.contactItems} ${className ? className : undefined}`} variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+    <motion.div key={pathname} className={`${styles.contactItems} ${className ? className : undefined}`} variants={hasAnimation ? containerVariants : undefined} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
 
       {contactItems.map((item) => (
 

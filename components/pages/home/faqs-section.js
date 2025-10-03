@@ -39,8 +39,11 @@ export default function FaqsSection() {
   ];
 
   return (
+
     <section id="faq" className="row faqsSection">
+
       <div className="container spaceBetween noPaddingBottom">
+
         <Heading
           className="hasFullStop mobileCentered"
           eyebrow="FREQUENTLY ASKED QUESTIONS"
@@ -53,18 +56,25 @@ export default function FaqsSection() {
           btnOneLink="/faqs"
           hiddenMobile={true}
         />
+
       </div>
 
       <div className="container noPaddingTop">
+
         <Faqs faqs={faqs} />
 
         <Buttons
+          className="centered"
           btnOneClass="primary hasAnimation"
           btnOneText="See all FAQs"
           btnOneLink="/faqs"
           hiddenDesktop={true}
         />
+        
       </div>
+
     </section>
+
   );
+
 }

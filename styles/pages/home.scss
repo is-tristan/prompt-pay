@@ -83,13 +83,13 @@ $containerMaxWidth: 1200px;
 
 .ctaRow {
     max-width: 90%;
-    margin: 20rem auto 4rem;
+    margin: 12.5rem auto 1rem;
     position: relative;
     overflow: unset;
 
     @media (width >=1200px) {
         max-width: $containerMaxWidth;
-        margin: 20rem auto 7.5rem;
+        margin: 10rem auto 5rem;
     }
 
     &::before {

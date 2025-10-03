@@ -1,17 +1,13 @@
 // Components
 import Banner from "@/components/ui/reusables/banner";
 import DualCols from "@/components/ui/reusables/dual-columns";
-import VideoRow from "@/components/ui/reusables/video-row";
+import VideoRow from "@/components/pages/careers/video-row";
 import CareersGrid from "@/components/pages/careers/career-grid";
 import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
 const bannerImage = "/covers/careers-cover.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.png";
-
-// Videos
-const videoSrc = "/videos/partner-referral-video.mp4";
-const videoPoster = "/videos/posters/partner-referral-video-poster.webp";
 
 export default function CareersPage() {
 
@@ -31,13 +27,7 @@ export default function CareersPage() {
                 buttonLinkTwo="/contact"
             />
 
-            <VideoRow
-                id="video"
-                videoSrc={videoSrc}
-                type="video/mp4"
-                poster={videoPoster}
-                overlayBanner={true}
-            />
+            <VideoRow />
 
             <DualCols
                 headingLevel="h2"
