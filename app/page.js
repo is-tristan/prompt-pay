@@ -11,7 +11,6 @@ import VideoBanner from "@/components/pages/home/video-banner";
 import TextSlider from "@/components/sliders/logo-slider";
 import DualCols from "@/components/pages/home/dashboard-section";
 import ContactSection from "@/components/ui/sections/contact-section";
-import InstagramSection from "@/components/ui/sections/instagram-section";
 import LogoSlider from "@/components/ui/sections/logo-slider-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
 
@@ -51,8 +50,6 @@ export default function Home() {
       <LogoSlider />
 
       <TestimonialsSection />
-
-      <InstagramSection />
 
       <ContactSection />
 
