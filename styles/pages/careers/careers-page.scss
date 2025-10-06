@@ -1,0 +1,19 @@
+.careersIntro {
+    .imageCol {
+        animation: pulse 3s ease-in-out infinite;
+
+        @keyframes pulse {
+            0% {
+                scale: 1;
+            }
+
+            50% {
+                scale: 1.025;
+            }
+
+            100% {
+                scale: 1;
+            }
+        }
+    }
+}

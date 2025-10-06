@@ -40,13 +40,35 @@ export default function Heading({
     },
   };
 
+  // Render the appropriate heading level
+  const HeadingTag = level;
+  const headingClassName = title.endsWith(".") ? "hasFullStop" : undefined;
+
+  // Render without animations
+  if (!hasAnimation) {
+    return (
+      <div className={`heading ${className}`}>
+        {eyebrow && (
+          <div className="eyebrow">
+            <span>{eyebrow}</span>
+          </div>
+        )}
+
+        <HeadingTag className={headingClassName}>{title}</HeadingTag>
+
+        {text && <p dangerouslySetInnerHTML={{ __html: text }} />}
+      </div>
+    );
+  }
+
+  // Render with animations
   return (
     <motion.div
-      key={hasAnimation ? pathname : undefined}
+      key={pathname}
       className={`heading ${className}`}
-      variants={hasAnimation ? containerVariants : null}
-      initial={hasAnimation ? "hidden" : null}
-      whileInView={hasAnimation ? "visible" : null}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
       viewport={{ once: true, amount: 0.45 }}
     >
       {eyebrow && (
@@ -56,50 +78,32 @@ export default function Heading({
       )}
 
       {level === "h1" && (
-        <motion.h1
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h1 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h1>
       )}
       {level === "h2" && (
-        <motion.h2
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h2 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h2>
       )}
       {level === "h3" && (
-        <motion.h3
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h3 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h3>
       )}
       {level === "h4" && (
-        <motion.h4
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h4 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h4>
       )}
       {level === "h5" && (
-        <motion.h5
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h5 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h5>
       )}
       {level === "h6" && (
-        <motion.h6
-          variants={itemVariants}
-          className={title.endsWith(".") ? "hasFullStop" : undefined}
-        >
+        <motion.h6 variants={itemVariants} className={headingClassName}>
           {title}
         </motion.h6>
       )}
@@ -108,6 +112,7 @@ export default function Heading({
         <motion.p
           variants={itemVariants}
           dangerouslySetInnerHTML={{ __html: text }}
+          suppressHydrationWarning={true}
         />
       )}
     </motion.div>

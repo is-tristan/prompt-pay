@@ -17,10 +17,10 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 // Images
 const integrationsImage = "/images/features/thumbnail-integrations.png";
-const powerfulDashboardImage =
-  "/images/features/thumbnail-powerful-dashboard.png";
+const powerfulDashboardImage = "/images/features/thumbnail-powerful-dashboard.png";
 const globalPaymentsImage = "/images/features/thumbnail-global-payments.png";
 const businessReadyImage = "/images/features/thumbnail-business-ready.png";
+const merchantLoans = "/images/features/thumbnail-merchant-facing-loans.png";
 const liveSupportImage = "/images/features/thumbnail-live-support.png";
 
 export default function FeatureSlider() {
@@ -65,6 +65,15 @@ export default function FeatureSlider() {
     },
     {
       id: 5,
+      image: merchantLoans,
+      alt: "Merchant-facing loans Image",
+      title: "Merchant-facing loans",
+      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      link: "#",
+      linkLabel: "Learn More",
+    },
+    {
+      id: 6,
       image: liveSupportImage,
       alt: "Live Support Image",
       title: "24/7 Live Support",

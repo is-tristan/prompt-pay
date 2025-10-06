@@ -21,7 +21,7 @@ export default function FullwidthVideoSection() {
   };
 
   const videoSrc = "/videos/prompt-pay-marketing-video.mp4";
-  const posterSrc = "/videos/posters/prompt-pay-marketing-video-poster.png";
+  const posterSrc = "/videos/posters/prompt-pay-marketing-video-poster.webp";
 
   useEffect(() => {
     if (!sectionRef.current) return;

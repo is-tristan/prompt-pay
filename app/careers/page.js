@@ -9,6 +9,9 @@ import ContactSection from "@/components/ui/sections/contact-section";
 const bannerImage = "/covers/careers-cover.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.png";
 
+// Styles
+import "@/styles/pages/careers/careers-page.scss";
+
 export default function CareersPage() {
 
     return (

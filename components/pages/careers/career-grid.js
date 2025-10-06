@@ -96,34 +96,49 @@ export default async function CareerGrid() {
 
                             </div>
 
-                            <div className={styles.careerGridItemMeta}>
+                            {career.careerFields.location || career.careerFields.salary || career.careerFields.roleType ? (
 
-                                <div className={styles.careerMetaItem}>
+                                <div className={styles.careerGridItemMeta}>
 
-                                    <Location size={16} />
+                                    {career.careerFields.location && (
 
-                                    <span>{career.careerFields.location}</span>
+                                        <div className={styles.careerMetaItem}>
+
+                                            <Location size={16} />
+
+                                            <span>{career.careerFields.location}</span>
+
+                                        </div>
+
+                                    )}
+
+                                    {career.careerFields.salary && (
+
+                                        <div className={styles.careerMetaItem}>
+
+                                            <FinancialAssets size={16} />
+
+                                            <span>£{career.careerFields.salary}</span>
+
+                                        </div>
+
+                                    )}
+
+                                    {career.careerFields.roleType && (
+
+                                        <div className={styles.careerMetaItem}>
+
+                                            <Result size={16} />
+
+                                            <span>{career.careerFields.roleType}</span>
+
+                                        </div>
+
+                                    )}
 
                                 </div>
 
-                                <div className={styles.careerMetaItem}>
-
-                                    <FinancialAssets size={16} />
-
-                                    <span>£{career.careerFields.salary}</span>
-
-                                </div>
-
-                                <div className={styles.careerMetaItem}>
-
-                                    <Result size={16} />
-
-                                    <span>{career.careerFields.roleType}</span>
-
-                                </div>
-
-                            </div>
-
+                            ) : null}
 
                             <Buttons btnOneText="Apply now" btnOneClass="primary" btnOneLink={`/careers/${career.slug}`} />
 

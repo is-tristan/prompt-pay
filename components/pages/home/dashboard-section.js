@@ -86,10 +86,7 @@ export default function DualCols({
 
         <div className="col imageCol imagePeopleCol fill">
 
-          <motion.div
-            className="imagePeopleContainer"
-            style={{ y }}
-          >
+          <div className="imagePeopleContainer">
 
             <Image
               className="imagePeople"
@@ -100,7 +97,7 @@ export default function DualCols({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
 
-          </motion.div>
+          </div>
 
           <motion.div
             className="imageColContainer imageColLeftContainer"
