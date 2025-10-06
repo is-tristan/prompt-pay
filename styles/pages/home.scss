@@ -71,6 +71,14 @@
 
     &.imageColContainer {
         scale: 1.15;
+
+        @media (width >=768px) {
+            scale: 1.05;
+        }
+
+        @media (width >=1600px) {
+            scale: 1.15;
+        }
     }
 
     &.imageColLeftContainer {

@@ -89,9 +89,7 @@ export default function ContactItems({
 
           <div className={styles.contactItemContent}>
 
-            <h4> {item.id === 1 ? "Email Address" : item.id === 2 ? "Phone Number" : item.id === 3 ? "Working Hours" : item.id === 4 ? "Office Address" : null} </h4>
-
-            <span>{item.info}</span>
+            <h4>{item.info}</h4>
 
           </div>
 

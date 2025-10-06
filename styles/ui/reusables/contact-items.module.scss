@@ -61,7 +61,8 @@
     .contactItemContent {
         display: flex;
         flex-flow: column nowrap;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
         text-align: left;
         gap: 0.33rem;
 
