@@ -17,6 +17,8 @@ export default function HomeBanner() {
     setIsVideoLoading(true);
   };
 
+  const videoPoster = "/videos/posters/prompt-pay-marketing-video-poster.webp";
+
   return (
     <section id="banner" className={`row homeBanner videoBanner`}>
       <div
@@ -59,7 +61,7 @@ export default function HomeBanner() {
           onLoadStart={handleVideoLoadStart}
           onWaiting={() => setIsVideoLoading(true)}
           onPlaying={() => setIsVideoLoading(false)}
-          poster="/videos/posters/prompt-pay-banner-video-poster.webp"
+          poster={videoPoster}
         >
           <source src="/videos/prompt-pay-banner-video.mp4" type="video/mp4" />
         </video>
