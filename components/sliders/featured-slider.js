@@ -16,11 +16,11 @@ import { ArrowLeft, ArrowRight } from "@carbon/react/icons";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 // Images
+const fastFunding = "/images/features/thumbnail-fast-funding.png";
 const integrationsImage = "/images/features/thumbnail-integrations.png";
 const powerfulDashboardImage = "/images/features/thumbnail-powerful-dashboard.png";
 const globalPaymentsImage = "/images/features/thumbnail-global-payments.png";
 const businessReadyImage = "/images/features/thumbnail-business-ready.png";
-const merchantLoans = "/images/features/thumbnail-merchant-facing-loans.png";
 const liveSupportImage = "/images/features/thumbnail-live-support.png";
 
 export default function FeatureSlider() {
@@ -29,46 +29,46 @@ export default function FeatureSlider() {
   const cloverSlides = [
     {
       id: 1,
-      image: integrationsImage,
-      alt: "Integrations Feature Image",
-      title: "Integrations",
-      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      image: fastFunding,
+      alt: "Fast Funding Feature Image",
+      title: "Fast Funding",
+      text: "Many businesses don't realize they can get funding based on their card payments—and that's exactly what Prompt Pay Capital offers. Through our trusted partners, you can access cash quickly.",
       link: "#",
       linkLabel: "Learn More",
     },
     {
       id: 2,
-      image: powerfulDashboardImage,
-      alt: "Powerful Dashboard Image",
-      title: "Powerful Dashboard",
-      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      image: globalPaymentsImage,
+      alt: "Global Payments Image",
+      title: "Global Payments",
+      text: "We make accepting payments simple and stress-free. With fast setup, secure transactions, and flexible payment options, you can start taking payments anytime, anywhere.",
       link: "#",
       linkLabel: "Learn More",
     },
     {
       id: 3,
-      image: globalPaymentsImage,
-      alt: "Global Payments Image",
-      title: "Global Payments",
-      text: "We make accepting payments simple. Your customers will love just how easy it is.",
+      image: powerfulDashboardImage,
+      alt: "Powerful Dashboard Image",
+      title: "Powerful Dashboard",
+      text: "Empower your business with our partners' powerful dashboards. With a clean, intuitive interface, tracking sales, understanding customer behavior, and managing inventory becomes effortless.",
       link: "#",
       linkLabel: "Learn More",
     },
     {
       id: 4,
-      image: businessReadyImage,
-      alt: "Business Ready Image",
-      title: "Business Ready",
-      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      image: integrationsImage,
+      alt: "Integrations Feature Image",
+      title: "Integrations",
+      text: "Connect your business effortlessly with our partners' powerful integrations. Securely process payments and manage sales, inventory, and customer data with intuitive POS systems. ",
       link: "#",
       linkLabel: "Learn More",
     },
     {
       id: 5,
-      image: merchantLoans,
-      alt: "Merchant-facing loans Image",
-      title: "Merchant-facing loans",
-      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      image: businessReadyImage,
+      alt: "Ecommerce Ready Image",
+      title: "Ecommerce Ready",
+      text: "Seamlessly integrate your online store with our partners' advanced e-commerce solutions. Accept secure payments, manage sales and inventory effortlessly, and offer customers a smooth checkout experience.",
       link: "#",
       linkLabel: "Learn More",
     },
@@ -77,7 +77,7 @@ export default function FeatureSlider() {
       image: liveSupportImage,
       alt: "Live Support Image",
       title: "24/7 Live Support",
-      text: "Nulla nisi mauris, sodales sit amet justo id, sodales volutpat turpis.",
+      text: "Your business never stops & neither does our support. Every product we offer, from card machines and POS systems to online gateways and payment solutions, comes with round-the-clock assistance.",
       link: "#",
       linkLabel: "Learn More",
     },
