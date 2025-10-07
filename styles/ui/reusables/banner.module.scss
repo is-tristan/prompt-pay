@@ -43,4 +43,19 @@
         }
     }
 
+    &.bannerVideo {
+        video {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &::after {
+            background: linear-gradient(to top, rgba(var(--darkRgb), 0.25) 0%, rgba(var(--darkAltRgb), 0.5) 50%, rgba(var(--primaryRgb), 0.25) 100%);
+        }
+    }
+
 }

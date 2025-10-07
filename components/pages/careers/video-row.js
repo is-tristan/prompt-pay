@@ -13,8 +13,6 @@ export default function VideoRow() {
 
             <div className="container centered">
 
-                <Heading className="hasFullStop" eyebrow="Get started with us" title="How to become a referral partner" />
-
                 <div className="videoContainer" style={{marginTop: '2rem'}}>
                     
                     <video

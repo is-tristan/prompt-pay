@@ -6,7 +6,7 @@ import { useState } from "react";
 // Components
 import Loader from "@/components/misc/loader";
 
-export default function HomeBanner() {
+export default function HomeBanner({ src = "/videos/prompt-pay-banner-video.mp4", poster = "/videos/posters/prompt-pay-marketing-video-poster.webp" }) {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handleVideoCanPlay = () => {
@@ -16,8 +16,6 @@ export default function HomeBanner() {
   const handleVideoLoadStart = () => {
     setIsVideoLoading(true);
   };
-
-  const videoPoster = "/videos/posters/prompt-pay-marketing-video-poster.webp";
 
   return (
     <section id="banner" className={`row homeBanner videoBanner`}>
@@ -61,9 +59,9 @@ export default function HomeBanner() {
           onLoadStart={handleVideoLoadStart}
           onWaiting={() => setIsVideoLoading(true)}
           onPlaying={() => setIsVideoLoading(false)}
-          poster={videoPoster}
+          poster={poster}
+          src={src}
         >
-          <source src="/videos/prompt-pay-banner-video.mp4" type="video/mp4" />
         </video>
       </div>
     </section>

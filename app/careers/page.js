@@ -6,7 +6,8 @@ import CareersGrid from "@/components/pages/careers/career-grid";
 import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
-const bannerImage = "/covers/careers-cover.webp";
+const videoSrc = "/videos/about-video.mp4";
+const videoPoster = "/videos/posters/about-video-poster.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.png";
 
 // Styles
@@ -22,12 +23,13 @@ export default function CareersPage() {
                 eyebrow="Careers"
                 heading="Build the future of digital payments with us"
                 className="hasFullStop"
-                backgroundImage={bannerImage}
                 buttonTextOne="View open positions"
                 buttonTextLinkOne="#openPositions"
                 buttonClassOne="primary"
                 buttonTextTwo="Contact us"
                 buttonLinkTwo="/contact"
+                videoSrc={videoSrc}
+                videoPoster={videoPoster}
             />
 
             <DualCols

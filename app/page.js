@@ -26,7 +26,10 @@ export default function Home() {
 
       <HomeTabs />
 
+      <TextSlider />
+
       <DualCols
+        rowClassName="homeDashboardSection"
         eyebrow="POWERFUL DASHBOARD"
         title="See your business at a glance, anytime"
         text="We don't just process payments, we give businesses tools to turn every transaction into opportunity and every payment into progress. With speed, security and simplicity at our core, you can focus on growing your business."
@@ -45,8 +48,6 @@ export default function Home() {
           "1000+ customers",
         ]}
       />
-
-      <TextSlider />
 
       <FeaturedSection />
 
