@@ -6,8 +6,8 @@ import CareersGrid from "@/components/pages/careers/career-grid";
 import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
-const videoSrc = "/videos/about-video.mp4";
-const videoPoster = "/videos/posters/about-video-poster.webp";
+const videoSrc = "/videos/meet-the-team-video.mp4";
+const videoPoster = "/videos/posters/meet-the-team-video-poster.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.png";
 
 // Styles

@@ -199,7 +199,7 @@ export default async function ProductPage({ params }) {
 
       <TextSlider />
 
-      <ProductDashboard />
+      <ProductDashboard productCategory={productCategory} />
 
       <ComparePaymentProviders containerClassName="noPaddingBottom" />
 

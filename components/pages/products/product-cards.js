@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 // Components
 import Buttons from '@/components/ui/reusables/buttons';
-import Heading from '@/components/ui/reusables/heading';
 
 // Styles
 import styles from '@/styles/pages/products/product-cards.module.scss';
@@ -86,12 +85,6 @@ export async function ProductCards({ category = null }) {
         return (
 
             <section className="row">
-
-                <div className="container centered noPaddingTop noPaddingBottom" style={{ marginBottom: '1rem' }}>
-
-                    <Heading className={"hasFullStop "} eyebrow={"All Products"} title={"Explore our range of products"} text={"Discover our diverse selection of products designed to meet your needs. From innovative solutions to everyday essentials, we have something for everyone."} />
-
-                </div>
 
                 <div className="container centered noPaddingTop noPaddingBottom">
 

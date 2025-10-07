@@ -19,6 +19,7 @@ export default function ProductSection({
   containerClassName = false,
   image = "",
   imageAlt = "",
+  imageRadius = "",
   eyebrow = "",
   heading = "",
   headingLevel = "h2",
@@ -46,7 +47,7 @@ export default function ProductSection({
                 fill
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "contain" }} />
+                style={{ objectFit: "contain", borderRadius: imageRadius ? imageRadius : "0" }} />
 
               {rowClassName === "productHeader" && (
 
@@ -85,7 +86,7 @@ export default function ProductSection({
               className={styles.productSectionButtons}
             />
           )}
-          
+
         </div>
 
       </div>

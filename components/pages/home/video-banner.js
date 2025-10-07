@@ -7,6 +7,7 @@ import { useState } from "react";
 import Loader from "@/components/misc/loader";
 
 export default function HomeBanner({ src = "/videos/prompt-pay-banner-video.mp4", poster = "/videos/posters/prompt-pay-marketing-video-poster.webp" }) {
+  
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handleVideoCanPlay = () => {

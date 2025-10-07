@@ -2,18 +2,20 @@
 import ProductSection from "./product-section";
 
 // Images
-const dashboardImage = "/images/misc/product-dashboard-mockup.webp";
+const worldpayDashboardImage = "/images/misc/worldpay-product-dashboard-image.webp";
+const cloverDashboardImage = "/images/misc/clover-product-dashboard-image.webp";
 
-export default function ProductDashboard() {
+export default function ProductDashboard({ productCategory = "" }) {
   return (
     <>
       <ProductSection
         rowClassName="productDashboard"
         containerClassName="noPaddingBottom"
-        image={dashboardImage}
+        image={productCategory === "worldpay" ? worldpayDashboardImage : cloverDashboardImage}
         imageAlt="Product Dashboard"
         eyebrow="All-in-One Dashboard"
         heading="More power to you"
+        imageRadius="var(--colRadius)"
         listItems={[
           {
             id: 1,

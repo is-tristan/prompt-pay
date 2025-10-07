@@ -1,5 +1,8 @@
 "use client";
 
+// React
+import { useState } from "react";
+
 // Framer Motion
 import { motion } from "framer-motion";
 
@@ -9,6 +12,7 @@ import styles from "@/styles/ui/reusables/banner.module.scss";
 // Components
 import Buttons from "./buttons";
 import Heading from "./heading";
+import Loader from "@/components/misc/loader";
 
 export default function Banner({
   eyebrow = "",
@@ -24,6 +28,16 @@ export default function Banner({
   videoPoster = "",
   hasVideo = videoSrc ? true : false,
 }) {
+
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
+
+  const handleVideoCanPlay = () => {
+    setIsVideoLoading(false);
+  };
+
+  const handleVideoLoadStart = () => {
+    setIsVideoLoading(true);
+  };
 
   return (
 
@@ -62,15 +76,54 @@ export default function Banner({
 
       {hasVideo && (
 
-        <video
-          muted
-          autoPlay
-          playsInline
-          loop
-          preload="none"
-          src={videoSrc}
-          poster={videoPoster}
-        />
+        <>
+
+          {isVideoLoading && (
+
+            <div
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                zIndex: 2,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+
+              <Loader loadingText="Loading video..." />
+
+            </div>
+
+          )}
+
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className={`video`}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              aspectRatio: "16/9",
+              opacity: isVideoLoading ? 0.3 : 1,
+              transition: "opacity 0.3s ease-in-out",
+            }}
+            onCanPlay={handleVideoCanPlay}
+            onLoadStart={handleVideoLoadStart}
+            onWaiting={() => setIsVideoLoading(true)}
+            onPlaying={() => setIsVideoLoading(false)}
+            poster={videoPoster}
+            src={videoSrc}
+          >
+          </video>
+
+        </>
 
       )}
 
