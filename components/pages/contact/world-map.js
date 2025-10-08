@@ -8,7 +8,7 @@ import Heading from "@/components/ui/reusables/heading";
 import "@/styles/pages/contact.scss";
 
 // Images
-const mapImage = "/images/misc/world-map.png";
+const mapImage = "/images/misc/world-map.webp";
 
 export default function WorldMap() {
   return (

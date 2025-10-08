@@ -16,12 +16,12 @@ import { ArrowLeft, ArrowRight } from "@carbon/react/icons";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 // Images
-const fastFunding = "/images/features/thumbnail-fast-funding.png";
-const integrationsImage = "/images/features/thumbnail-integrations.png";
-const powerfulDashboardImage = "/images/features/thumbnail-powerful-dashboard.png";
-const globalPaymentsImage = "/images/features/thumbnail-global-payments.png";
-const businessReadyImage = "/images/features/thumbnail-business-ready.png";
-const liveSupportImage = "/images/features/thumbnail-live-support.png";
+const fastFunding = "/images/features/thumbnail-fast-funding.webp";
+const integrationsImage = "/images/features/thumbnail-integrations.webp";
+const powerfulDashboardImage = "/images/features/thumbnail-powerful-dashboard.webp";
+const globalPaymentsImage = "/images/features/thumbnail-global-payments.webp";
+const businessReadyImage = "/images/features/thumbnail-business-ready.webp";
+const liveSupportImage = "/images/features/thumbnail-live-support.webp";
 
 export default function FeatureSlider() {
   const splideRef = useRef(null);

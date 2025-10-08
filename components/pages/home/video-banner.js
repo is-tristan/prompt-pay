@@ -7,7 +7,7 @@ import { useState } from "react";
 import Loader from "@/components/misc/loader";
 
 export default function HomeBanner({ src = "/videos/prompt-pay-banner-video.mp4", poster = "/videos/posters/prompt-pay-marketing-video-poster.webp" }) {
-  
+
   const [isVideoLoading, setIsVideoLoading] = useState(true);
 
   const handleVideoCanPlay = () => {
@@ -35,6 +35,8 @@ export default function HomeBanner({ src = "/videos/prompt-pay-banner-video.mp4"
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              textAlign: "center",
+              width: "100%",
             }}
           >
             <Loader loadingText="Loading video..." />
@@ -46,7 +48,7 @@ export default function HomeBanner({ src = "/videos/prompt-pay-banner-video.mp4"
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           className={`video`}
           style={{
             width: "100%",

@@ -5,7 +5,7 @@ import ProductSlider from "@/components/sliders/products-slider";
 import Heading from "@/components/ui/reusables/heading";
 
 // Background Images
-const dots = "/backgrounds/background-dots-top-right.png";
+const dots = "/backgrounds/background-dots-top-right.webp";
 
 export default function HomeTabs() {
 

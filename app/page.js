@@ -2,17 +2,18 @@
 import "@/styles/pages/home.scss";
 
 // Components
-import CtaRow from "@/components/pages/home/cta-section";
-import FaqsSection from "@/components/pages/home/faqs-section";
-import FeaturedSection from "@/components/pages/home/featured-section";
-import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
-import HomeTabs from "@/components/pages/home/tabs-section";
 import VideoBanner from "@/components/pages/home/video-banner";
+import IntroSection from "@/components/pages/home/intro-section";
+import CtaRow from "@/components/pages/home/cta-section";
+import HomeTabs from "@/components/pages/home/tabs-section";
 import TextSlider from "@/components/sliders/logo-slider";
 import DualCols from "@/components/pages/home/dashboard-section";
-import ContactSection from "@/components/ui/sections/contact-section";
+import FeaturedSection from "@/components/pages/home/featured-section";
 import LogoSlider from "@/components/ui/sections/logo-slider-section";
+import FaqsSection from "@/components/pages/home/faqs-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
+import ContactSection from "@/components/ui/sections/contact-section";
+import FullwidthVideoSection from "@/components/pages/home/fullwidth-video-section";
 
 export default function Home() {
 
@@ -21,6 +22,8 @@ export default function Home() {
     <>
 
       <VideoBanner />
+
+      <IntroSection />
 
       <CtaRow />
 

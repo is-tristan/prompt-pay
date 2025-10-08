@@ -29,7 +29,7 @@ export default function FooterLogo() {
 
       <div className={styles.footerSocialLinks}>
         <a
-          href="https://www.facebook.com/promptpayuk"
+          href="https://www.facebook.com/promptpay/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prompt Pay Facebook Page"
@@ -45,16 +45,7 @@ export default function FooterLogo() {
         </a>
 
         <a
-          href="https://twitter.com/promptpayuk"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Prompt Pay Twitter Page"
-        >
-          <Image src={twitterIcon} alt="Twitter Icon" width={24} height={24} />
-        </a>
-
-        <a
-          href="https://www.linkedin.com/company/promptpayuk"
+          href="https://linkedin.com/company/prompt-pay-capital"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prompt Pay LinkedIn Page"
@@ -68,14 +59,14 @@ export default function FooterLogo() {
         </a>
 
         <a
-          href="https://www.youtube.com/promptpayuk"
+          href="https://www.youtube.com/@PromptPayCapital"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prompt Pay YouTube Page"
         >
           <Image
             src={youtubeIcon}
-            alt="Instagram Icon"
+            alt="YouTube Icon"
             width={24}
             height={24}
           />

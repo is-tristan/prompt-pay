@@ -6,8 +6,8 @@ import ContactItems from "@/components/ui/reusables/contact-items";
 import Heading from "@/components/ui/reusables/heading";
 
 // Background Images
-const dotsTopRight = "/backgrounds/background-dots-top-right.png";
-const dotsBottomLeft = "/backgrounds/background-dots-bottom-left.png";
+const dotsTopRight = "/backgrounds/background-dots-top-right.webp";
+const dotsBottomLeft = "/backgrounds/background-dots-bottom-left.webp";
 
 // Styles
 import styles from "@/styles/ui/sections/contact-section.module.scss";

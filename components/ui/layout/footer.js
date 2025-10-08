@@ -62,6 +62,21 @@ export default function Footer() {
 
           <FooterNav
             className={styles.footerNavThree}
+            title="Features"
+            footerLinks={[
+              { id: 1, text: "Clover Dashboard", link: "/features/clover-dashboard" },
+              { id: 2, text: "Clover Gateway", link: "/features/clover-gateway" },
+              { id: 3, text: "Clover E-commerce", link: "/features/clover-e-commerce" },
+              { id: 4, text: "Clover Contactless", link: "/features/clover-contactless" },
+              { id: 5, text: "Worldpay Dashboard", link: "/features/worldpay-dashboard" },
+              { id: 6, text: "Worldpay Gateway", link: "/features/worldpay-gateway" },
+              { id: 7, text: "Worldpay E-commerce", link: "/features/worldpay-e-commerce" },
+              { id: 8, text: "Worldpay Contactless", link: "/features/worldpay-contactless" },
+            ]}
+          />
+
+          <FooterNav
+            className={styles.footerNavThree}
             title="Legal"
             footerLinks={[
               { id: 1, text: "Privacy Policy", link: "/legal/privacy-policy" },
@@ -70,8 +85,6 @@ export default function Footer() {
               { id: 4, text: "Subject Access Request", link: "/legal/subject-access-request" },
             ]}
           />
-
-          <FooterSubscribe />
 
           {/* <div className={`${styles.footerCol} ${styles.footerContactCol}`}>
 

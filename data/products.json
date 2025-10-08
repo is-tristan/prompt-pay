@@ -4,7 +4,7 @@
             {
                 "id": 1,
                 "productName": "Clover Flex",
-                "productImage": "/images/products/clover-flex/clover-flex-thumbnail.png",
+                "productImage": "/images/products/clover-flex/clover-flex-thumbnail.webp",
                 "label": "Flex",
                 "slug": "/products/clover-flex",
                 "description": "The Clover Flex is a sales-ready card reader allowing you to take payments on the go — anywhere — with a tap, swipe or scan.",
@@ -18,7 +18,7 @@
             {
                 "id": 2,
                 "productName": "Clover Flex Pocket",
-                "productImage": "/images/products/clover-flex-pocket/clover-flex-pocket-thumbnail.png",
+                "productImage": "/images/products/clover-flex-pocket/clover-flex-pocket-thumbnail.webp",
                 "label": "Flex Pocket",
                 "slug": "/products/clover-flex-pocket",
                 "description": "The Clover Flex Pocket is a compact, portable payment device that fits in your pocket, allowing you to take payments anywhere with ease.",
@@ -32,7 +32,7 @@
             {
                 "id": 3,
                 "productName": "Clover Mini",
-                "productImage": "/images/products/clover-mini/clover-mini-thumbnail.png",
+                "productImage": "/images/products/clover-mini/clover-mini-thumbnail.webp",
                 "label": "Mini",
                 "slug": "/products/clover-mini",
                 "description": "The Clover Mini is a versatile point-of-sale terminal that combines a sleek design with powerful features to streamline your business operations.",
@@ -45,7 +45,7 @@
             {
                 "id": 4,
                 "productName": "Clover Station Solo",
-                "productImage": "/images/products/clover-station-solo/clover-station-solo-thumbnail.png",
+                "productImage": "/images/products/clover-station-solo/clover-station-solo-thumbnail.webp",
                 "label": "Station Solo",
                 "slug": "/products/clover-station-solo",
                 "description": "The Clover Station Solo is an all-in-one point-of-sale system that combines a sleek design with powerful features to streamline your business operations.",
@@ -58,7 +58,7 @@
             {
                 "id": 5,
                 "productName": "Clover Station Duo",
-                "productImage": "/images/products/clover-station-duo/clover-station-duo-thumbnail.png",
+                "productImage": "/images/products/clover-station-duo/clover-station-duo-thumbnail.webp",
                 "label": "Station Duo",
                 "slug": "/products/clover-station-duo",
                 "description": "Clover Station Duo A fast, dual-screen POS  Our all in one POS moves at the speed of your business. Step up your transactions with a customer-facing screen.",
@@ -74,7 +74,7 @@
             {
                 "id": 6,
                 "productName": "Worldpay DX4000",
-                "productImage": "/images/products/worldpay-dx4000/worldpay-dx4000-thumbnail.png",
+                "productImage": "/images/products/worldpay-dx4000/worldpay-dx4000-thumbnail.webp",
                 "label": "DX4000",
                 "slug": "/products/worldpay-dx4000",
                 "description": "A compact Android-based terminal designed for secure, reliable, and flexible payments.",
@@ -88,7 +88,7 @@
             {
                 "id": 7,
                 "productName": "Worldpay DX8000",
-                "productImage": "/images/products/worldpay-dx8000/worldpay-dx8000-thumbnail.png",
+                "productImage": "/images/products/worldpay-dx8000/worldpay-dx8000-thumbnail.webp",
                 "label": "DX8000",
                 "slug": "/products/worldpay-dx8000",
                 "description": "A high-performance handheld terminal with a large screen and full payment flexibility.",
@@ -102,7 +102,7 @@
             {
                 "id": 8,
                 "productName": "Worldpay 360 Lite",
-                "productImage": "/images/products/worldpay-360-lite/worldpay-360-lite-thumbnail.png",
+                "productImage": "/images/products/worldpay-360-lite/worldpay-360-lite-thumbnail.webp",
                 "label": "360 Lite",
                 "slug": "/products/worldpay-360-lite",
                 "description": "Worldpay 360 Lite is a cost-effective payment solution designed for small businesses, offering essential features to manage transactions efficiently.",
@@ -116,7 +116,7 @@
             {
                 "id": 9,
                 "productName": "Worldpay 360 Standard",
-                "productImage": "/images/products/worldpay-360-standard/worldpay-360-standard-thumbnail.png",
+                "productImage": "/images/products/worldpay-360-standard/worldpay-360-standard-thumbnail.webp",
                 "label": "360 Standard",
                 "slug": "/products/worldpay-360-standard",
                 "description": "Worldpay 360 Standard is a comprehensive payment solution designed for growing businesses, offering advanced features to streamline payment processing and enhance customer experience.",
@@ -131,7 +131,7 @@
             {
                 "id": 10,
                 "productName": "Worldpay 360 Pro",
-                "productImage": "/images/products/worldpay-360-pro/worldpay-360-pro-thumbnail.png",
+                "productImage": "/images/products/worldpay-360-pro/worldpay-360-pro-thumbnail.webp",
                 "label": "360 Pro",
                 "slug": "/products/worldpay-360-pro",
                 "description": "Worldpay 360 Pro is an advanced payment solution designed for established businesses, offering a full suite of features to optimize payment processing and drive business growth.",

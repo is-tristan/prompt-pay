@@ -39,7 +39,7 @@ export default function Globe({
       // Initialize globe using the factory function pattern
       const globe = Globe()
         .globeImageUrl(
-          "https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-night.jpg",
+          "/images/misc/earth-night.webp",
         )
         .arcsData(arcsData)
         .arcColor("color")
@@ -86,11 +86,11 @@ export default function Globe({
         try {
           const controls = globeRef.current?.controls?.();
           if (controls) controls.autoRotate = false;
-        } catch {}
+        } catch { }
         window.removeEventListener("resize", resize);
         try {
           ro.disconnect();
-        } catch {}
+        } catch { }
         if (containerRef.current) containerRef.current.innerHTML = "";
         globeRef.current = null;
       };
@@ -122,15 +122,15 @@ export default function Globe({
   const baseStyle =
     fit === "viewport"
       ? {
-          width: "100vw",
-          height: "100vh",
-          position: "relative",
-        }
+        width: "100vw",
+        height: "100vh",
+        position: "relative",
+      }
       : {
-          width: "100%",
-          height: "100%",
-          position: "relative",
-        };
+        width: "100%",
+        height: "100%",
+        position: "relative",
+      };
 
   return (
     <div

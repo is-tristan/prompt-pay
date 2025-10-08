@@ -7,10 +7,10 @@ import Link from "next/link";
 export default function Buttons({
   className = "",
   btnOneText = "Get Started",
-  btnOneLink = "#",
+  btnOneLink = "/contact",
   btnOneClass = "primary",
   btnTwoText = "",
-  btnTwoLink = "#",
+  btnTwoLink = "",
   btnTwoClass = "secondary",
   target = "_self",
   hiddenMobile = false,
