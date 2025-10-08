@@ -12,6 +12,7 @@ import styles from "@/styles/ui/layout/mobile-menu.module.scss";
 
 // Product
 import productItems from "@/data/products.json";
+import featureItems from "@/data/features.json";
 
 export default function MobileMenu({ isOpen, onClose }) {
 
@@ -42,6 +43,21 @@ export default function MobileMenu({ isOpen, onClose }) {
         }))
       ],
     },
+    {
+      href: "#",
+      label: "Features",
+      class: "hasSubMenu",
+      sublinks: [
+        ...featureItems[0].clover.map((item) => ({
+          label: item.label,
+          href: item.slug,
+        })),
+        ...featureItems[0].worldpay.map((item) => ({
+          label: item.label,
+          href: item.slug,
+        }))
+      ],
+    },
     { href: "/careers", label: "Careers" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
@@ -64,7 +80,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
                 <div className={`${styles.navItem} ${link.class ? styles[link.class] : ""}`} key={index} >
 
-                  <Link href={link.href} className={`${styles.navLink}`} onClick={link.sublinks ? (e) => { e.preventDefault(); toggleSubMenu(index); } : onClose} > {link.label} </Link>
+                  <Link href={link.href} className={`${styles.navLink} ${link.sublinks ? styles.hasSubMenu : ""}`} onClick={link.sublinks ? (e) => { e.preventDefault(); toggleSubMenu(index); } : onClose} > {link.label} </Link>
 
                   {link.sublinks && (
 

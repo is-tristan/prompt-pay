@@ -1,0 +1,48 @@
+[
+    {
+        "clover": [
+            {
+                "id": 1,
+                "label": "Clover Dashboard",
+                "slug": "/features/clover-dashboard"
+            },
+            {
+                "id": 2,
+                "label": "Clover Gateway",
+                "slug": "/features/clover-gateway"
+            },
+            {
+                "id": 3,
+                "label": "Clover E-commerce",
+                "slug": "/features/clover-e-commerce"
+            },
+            {
+                "id": 4,
+                "label": "Clover Contactless",
+                "slug": "/features/clover-contactless"
+            }
+        ],
+        "worldpay": [
+            {
+                "id": 1,
+                "label": "Worldpay Dashboard",
+                "slug": "/features/worldpay-dashboard"
+            },
+            {
+                "id": 2,
+                "label": "Worldpay Gateway",
+                "slug": "/features/worldpay-gateway"
+            },
+            {
+                "id": 3,
+                "label": "Worldpay E-commerce",
+                "slug": "/features/worldpay-e-commerce"
+            },
+            {
+                "id": 4,
+                "label": "Worldpay Contactless",
+                "slug": "/features/worldpay-contactless"
+            }
+        ]
+    }
+]
