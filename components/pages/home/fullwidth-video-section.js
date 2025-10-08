@@ -70,6 +70,8 @@ export default function FullwidthVideoSection() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            width: "100%",
+            textAlign: "center",
           }}
         >
 

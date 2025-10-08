@@ -38,9 +38,9 @@ export default function Home() {
         text="We don't just process payments, we give businesses tools to turn every transaction into opportunity and every payment into progress. With speed, security and simplicity at our core, you can focus on growing your business."
         btnOneClass="primary hasAnimation"
         btnOneText="About us"
-        btnOneLink="/about-us"
-        btnTwoText="Sign up today"
-        btnTwoLink="/sign-up"
+        btnOneLink="/about"
+        btnTwoText="Get in touch"
+        btnTwoLink="/contact"
         btnTwoClass="light"
         hasList={true}
         stylised={true}

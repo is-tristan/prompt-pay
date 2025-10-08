@@ -63,13 +63,13 @@ export default function FaqsSection() {
 
         <Faqs faqs={faqs} />
 
-        <Buttons
+        {/* <Buttons
           className="centered"
           btnOneClass="primary hasAnimation"
           btnOneText="See all FAQs"
           btnOneLink="/faqs"
           hiddenDesktop={true}
-        />
+        /> */}
         
       </div>
 
