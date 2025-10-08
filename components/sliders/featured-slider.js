@@ -33,8 +33,8 @@ export default function FeatureSlider() {
       alt: "Fast Funding Feature Image",
       title: "Fast Funding",
       text: "Many businesses don't realize they can get funding based on their card payments—and that's exactly what Prompt Pay Capital offers. Through our trusted partners, you can access cash quickly.",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
     {
       id: 2,
@@ -42,8 +42,8 @@ export default function FeatureSlider() {
       alt: "Global Payments Image",
       title: "Global Payments",
       text: "We make accepting payments simple and stress-free. With fast setup, secure transactions, and flexible payment options, you can start taking payments anytime, anywhere.",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
     {
       id: 3,
@@ -51,8 +51,8 @@ export default function FeatureSlider() {
       alt: "Powerful Dashboard Image",
       title: "Powerful Dashboard",
       text: "Empower your business with our partners' powerful dashboards. With a clean, intuitive interface, tracking sales, understanding customer behavior, and managing inventory becomes effortless.",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
     {
       id: 4,
@@ -60,8 +60,8 @@ export default function FeatureSlider() {
       alt: "Integrations Feature Image",
       title: "Integrations",
       text: "Connect your business effortlessly with our partners' powerful integrations. Securely process payments and manage sales, inventory, and customer data with intuitive POS systems. ",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
     {
       id: 5,
@@ -69,8 +69,8 @@ export default function FeatureSlider() {
       alt: "Ecommerce Ready Image",
       title: "Ecommerce Ready",
       text: "Seamlessly integrate your online store with our partners' advanced e-commerce solutions. Accept secure payments, manage sales and inventory effortlessly, and offer customers a smooth checkout experience.",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
     {
       id: 6,
@@ -78,8 +78,8 @@ export default function FeatureSlider() {
       alt: "Live Support Image",
       title: "24/7 Live Support",
       text: "Your business never stops & neither does our support. Every product we offer, from card machines and POS systems to online gateways and payment solutions, comes with round-the-clock assistance.",
-      link: "#",
-      linkLabel: "Learn More",
+      link: "/contact",
+      linkLabel: "Sign up today",
     },
   ];
 
