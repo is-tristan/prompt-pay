@@ -11,7 +11,7 @@ import Image from "next/image";
 import Loader from "@/components/misc/loader";
 
 // Styles
-import styles from "@/styles/ui/layout/product-menu.module.scss";
+import styles from "@/styles/ui/layout/mega-menu.module.scss";
 
 export default function ProductMenuItems({ currentUrl = "", categoryFilter = null }) {
 

@@ -9,6 +9,7 @@ export default function ProductDashboard({ productCategory = "" }) {
   return (
     <>
       <ProductSection
+        id="learn-more"
         rowClassName="productDashboard"
         containerClassName="noPaddingBottom"
         image={productCategory === "worldpay" ? worldpayDashboardImage : cloverDashboardImage}
@@ -16,6 +17,8 @@ export default function ProductDashboard({ productCategory = "" }) {
         eyebrow="All-in-One Dashboard"
         heading="More power to you"
         imageRadius="var(--colRadius)"
+        btnTextTwo="View All Products"
+        btnLinkTwo={productCategory ? `/products/${productCategory}` : "/products"}
         listItems={[
           {
             id: 1,

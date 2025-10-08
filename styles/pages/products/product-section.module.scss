@@ -15,11 +15,11 @@
         font-size: 1.25rem;
 
         @media (width >=768px) {
-            font-size: 2rem;
+            font-size: 1.66rem;
         }
 
         @media (width >=1200px) {
-            font-size: 2.5rem;
+            font-size: 2rem;
             text-wrap: pretty;
         }
     }
@@ -34,7 +34,7 @@
         .imageCol {
             border-radius: var(--colRadius);
             overflow: hidden;
-
+            
         }
     }
 

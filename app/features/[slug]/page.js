@@ -1,18 +1,15 @@
 // Components
-import ProductDashboard from "@/components/pages/products/product-dashboard";
-import { ProductNav } from "@/components/pages/products/product-nav";
 import ProductSection from "@/components/pages/products/product-section";
 import TextSlider from "@/components/sliders/logo-slider";
 import Buttons from "@/components/ui/reusables/buttons";
 import Heading from "@/components/ui/reusables/heading";
-import ComparePaymentProviders from "@/components/ui/sections/compare-payment-providers-section";
 import ContactSection from "@/components/ui/sections/contact-section";
 import TestimonialsSection from "@/components/ui/sections/testimonials-section";
 
 // Styles
-import styles from "@/styles/pages/products/product.module.scss";
+import styles from "@/styles/pages/features/feature.module.scss";
 
-// Generate static params for all products
+// Generate static params for all features
 export async function generateStaticParams() {
   try {
     const response = await fetch(process.env.GRAPHQL_ENDPOINT, {
@@ -22,8 +19,8 @@ export async function generateStaticParams() {
       },
       body: JSON.stringify({
         query: `
-          query GetAllProductSlugs {
-            products {
+          query GetAllFeatureSlugs {
+            features {
               edges {
                 node {
                   slug
@@ -37,8 +34,8 @@ export async function generateStaticParams() {
 
     const result = await response.json();
 
-    if (result.data?.products?.edges) {
-      return result.data.products.edges.map((edge) => ({
+    if (result.data?.features?.edges) {
+      return result.data.features.edges.map((edge) => ({
         slug: edge.node.slug,
       }));
     }
@@ -49,9 +46,9 @@ export async function generateStaticParams() {
   return [];
 }
 
-export default async function ProductPage({ params }) {
+export default async function FeaturePage({ params }) {
   const { slug } = await params;
-  let productData = null;
+  let featureData = null;
   try {
     const response = await fetch(process.env.GRAPHQL_ENDPOINT, {
       method: "POST",
@@ -60,14 +57,14 @@ export default async function ProductPage({ params }) {
       },
       body: JSON.stringify({
         query: `
-                    query GetAllProducts {
-                        products {
+                    query GetAllFeatures {
+                        features {
                             edges {
                                 node {
                                     id
                                     slug
                                     title
-                                    productCategories {
+                                    featureCategories {
                                         edges {
                                             node {
                                                 slug
@@ -76,9 +73,9 @@ export default async function ProductPage({ params }) {
                                             }
                                         }
                                     }
-                                    productFields {
-                                        basicProductInformation {
-                                            productHeading
+                                    featureFields {
+                                        firstRow {
+                                            featureHeading
                                             itemDescription1
                                             itemDescription2
                                             itemDescription3
@@ -124,21 +121,19 @@ export default async function ProductPage({ params }) {
 
     if (result.errors) {
       console.error("GraphQL Errors:", result.errors);
-    } else if (result.data && result.data.products) {
-      const foundProduct = result.data.products.edges.find(
+    } else if (result.data && result.data.features) {
+      const foundfeature = result.data.features.edges.find(
         (edge) => edge.node.slug === slug,
       );
-      productData = foundProduct ? foundProduct.node : null;
+      featureData = foundfeature ? foundfeature.node : null;
     }
   } catch (error) {
     console.error("Fetch error:", error);
   }
 
-  const productCategory = productData?.productCategories?.edges?.[0]?.node?.slug || null;
+  const featureCategory = featureData?.featureCategories?.edges?.[0]?.node?.slug || null;
 
-  const currentUrl = `/products/${slug}`;
-
-  if (!productData) {
+  if (!featureData) {
 
     return (
 
@@ -146,19 +141,13 @@ export default async function ProductPage({ params }) {
 
         <div className={styles.productPage}>
 
-          <section className={`row ${styles.productNavSection}`}>
+          <section className={`row ${styles.featureNotFoundSection}`}>
 
-            <ProductNav categoryFilter={productCategory} />
+            <div className={`container centered ${styles.featureNotFoundContainer}`} style={{ minHeight: "100vh" }}>
 
-          </section>
+              <Heading hasAnimation={false} level="h2" className="hasFullStop" eyebrow="Error 404" title="Feature Not Found" text="Sorry, the feature you are looking for does not exist." />
 
-          <section className={`row ${styles.productNotFoundSection}`}>
-
-            <div className={`container centered ${styles.productNotFoundContainer}`}>
-
-              <Heading level="h2" className="hasFullStop" title="Product Not Found" text="Sorry, the product you are looking for does not exist." />
-
-              <Buttons btnOneText="Back to Products" btnOneLink="/products" btnOneClass="primary hasAnimation" />
+              <Buttons btnOneText="Back to features" btnOneLink="/features" btnOneClass="primary hasAnimation" />
 
             </div>
 
@@ -176,39 +165,27 @@ export default async function ProductPage({ params }) {
 
     <>
 
-      <ProductNav currentUrl={currentUrl} categoryFilter={productCategory} />
-
       <ProductSection
         hasAnimation={false}
         rowClassName={"productHeader"}
-        image={productData.featuredImage?.node?.mediaItemUrl || ""}
-        imageAlt={productData.featuredImage?.node?.altText || productData.title || ""}
-        eyebrow={`Discover ${productData.title}`}
+        containerClassName={`${styles.featureHeader}`}
+        image={featureData.featuredImage?.node?.mediaItemUrl || ""}
+        imageAlt={featureData.featuredImage?.node?.altText || featureData.title || ""}
+        eyebrow={`Discover ${featureData.title}`}
         headingLevel="h2"
-        heading={productData.productFields?.basicProductInformation?.productHeading || ""}
-        listItems={[productData.productFields?.basicProductInformation?.itemTitle1 ? { label: productData.productFields.basicProductInformation.itemTitle1, description: productData.productFields.basicProductInformation.itemDescription1, } : null, productData.productFields?.basicProductInformation?.itemTitle2 ? { label: productData.productFields.basicProductInformation.itemTitle2, description: productData.productFields.basicProductInformation.itemDescription2, } : null, productData.productFields?.basicProductInformation?.itemTitle3 ? { label: productData.productFields.basicProductInformation.itemTitle3, description: productData.productFields.basicProductInformation.itemDescription3, } : null,]}
-        productCategory={productCategory}
-        btnTextTwo="View All Products"
-        btnLinkTwo={productCategory ? `/products/${productCategory}` : "/products"}
+        heading={featureData.featureFields?.firstRow?.featureHeading || ""}
+        listItems={[featureData.featureFields?.firstRow?.itemTitle1 ? { label: featureData.featureFields.firstRow.itemTitle1, description: featureData.featureFields.firstRow.itemDescription1, } : null, featureData.featureFields?.firstRow?.itemTitle2 ? { label: featureData.featureFields.firstRow.itemTitle2, description: featureData.featureFields.firstRow.itemDescription2, } : null, featureData.featureFields?.firstRow?.itemTitle3 ? { label: featureData.featureFields.firstRow.itemTitle3, description: featureData.featureFields.firstRow.itemDescription3, } : null,]}
+        featureCategory={featureCategory}
       />
 
       <ProductSection
         rowClassName={"hasImage"}
         containerClassName={"rowReverse noPaddingTop"}
-        image={productData.productFields?.secondRow?.image?.node?.mediaItemUrl || ""}
-        imageAlt={productData.productFields?.secondRow?.image?.node?.altText || productData.title || ""}
-        eyebrow={`Discover ${productData.title}`} headingLevel="h2" heading={productData.productFields?.secondRow?.secondHeading || ""} listItems={[productData.productFields?.secondRow?.itemTitle1 ? { label: productData.productFields.secondRow.itemTitle1, description: productData.productFields.secondRow.itemDescription1, } : null, productData.productFields?.secondRow?.itemTitle2 ? { label: productData.productFields.secondRow.itemTitle2, description: productData.productFields.secondRow.itemDescription2, } : null, productData.productFields?.secondRow?.itemTitle3 ? { label: productData.productFields.secondRow.itemTitle3, description: productData.productFields.secondRow.itemDescription3, } : null,]}
-        btnTextOne="Contact Us"
-        btnLinkOne="/contact"
-        btnTextTwo="Learn More"
-        btnLinkTwo="#learn-more"
-      />
+        image={featureData.featureFields?.secondRow?.image?.node?.mediaItemUrl || ""}
+        imageAlt={featureData.featureFields?.secondRow?.image?.node?.altText || featureData.title || ""}
+        eyebrow={`Discover ${featureData.title}`} headingLevel="h2" heading={featureData.featureFields?.secondRow?.secondHeading || ""} listItems={[featureData.featureFields?.secondRow?.itemTitle1 ? { label: featureData.featureFields.secondRow.itemTitle1, description: featureData.featureFields.secondRow.itemDescription1, } : null, featureData.featureFields?.secondRow?.itemTitle2 ? { label: featureData.featureFields.secondRow.itemTitle2, description: featureData.featureFields.secondRow.itemDescription2, } : null, featureData.featureFields?.secondRow?.itemTitle3 ? { label: featureData.featureFields.secondRow.itemTitle3, description: featureData.featureFields.secondRow.itemDescription3, } : null,]} />
 
       <TextSlider />
-
-      <ProductDashboard productCategory={productCategory} />
-
-      <ComparePaymentProviders containerClassName="noPaddingBottom" />
 
       <TestimonialsSection />
 

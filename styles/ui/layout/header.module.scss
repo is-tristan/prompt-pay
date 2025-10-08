@@ -1,5 +1,6 @@
 $headerTransition: all 0.15s ease-in-out;
 $submenuTransition: all 0.15s ease-in-out;
+$megamenuTransition: all 0.1s ease-in-out;
 
 @mixin submenu() {
     display: flex;
@@ -126,16 +127,19 @@ $submenuTransition: all 0.15s ease-in-out;
             }
 
             &:hover {
+
                 .subMenu,
                 .megaMenu {
-                    top: 100%;
                     opacity: 1;
                     visibility: visible;
+                    z-index: 99999;
+                    transform: translateX(0) scale(1);
                 }
             }
 
             &.hasMegaMenu {
                 position: unset;
+
                 &:hover {
                     .megaMenu {
                         top: calc(100% - 0.5rem);
@@ -164,17 +168,21 @@ $submenuTransition: all 0.15s ease-in-out;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 0;
+    top: calc(100% - 0.5rem);
     left: 0;
     right: 0;
     width: max-content;
     margin: 0 auto;
     opacity: 0;
     visibility: hidden;
-    transition: $headerTransition;
+    transform: translateX(7.5rem);
+    z-index: -1;
+    transition: $megamenuTransition;
     transition-delay: 0.15s;
 
     &:hover {
         transition-delay: 0.33s;
+        z-index: 99999;
+        transform: translateX(0);
     }
 }

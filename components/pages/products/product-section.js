@@ -8,12 +8,14 @@ import Heading from "@/components/ui/reusables/heading";
 
 // Styles
 import styles from "@/styles/pages/products/product-section.module.scss";
+import featureStyles from "@/styles/pages/features/feature.module.scss";
 
 // Logos
 const cloverLogo = "/logos/external/clover-logo.svg";
 const worldPayLogo = "/logos/external/worldpay-logo.svg";
 
 export default function ProductSection({
+  id = "",
   hasAnimation = true,
   rowClassName = "",
   containerClassName = false,
@@ -26,12 +28,17 @@ export default function ProductSection({
   text = "",
   listItems = [],
   productCategory = "",
+  featureCategory = "",
   hasBtns = true,
+  btnTextOne = "Get in Touch",
+  btnLinkOne = "/contact",
+  btnTextTwo = "",
+  btnLinkTwo = ""
 }) {
 
   return (
 
-    <section className={`row ${styles.productSection} ${rowClassName ? styles[rowClassName] : undefined}`} >
+    <section id={id ? id : null} className={`row ${styles.productSection} ${rowClassName ? styles[rowClassName] : undefined}`} >
 
       <div className={`container dualCols ${styles.productSectionContainer} ${containerClassName ? containerClassName : undefined} `}>
 
@@ -47,17 +54,17 @@ export default function ProductSection({
                 fill
                 loading="lazy"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "contain", borderRadius: imageRadius ? imageRadius : "0" }} />
+                style={{ objectFit: "cover", borderRadius: imageRadius ? imageRadius : "0" }} />
 
               {rowClassName === "productHeader" && (
 
                 <Image
-                  src={productCategory === "clover" ? cloverLogo : productCategory === "worldpay" ? worldPayLogo : null}
-                  alt={productCategory === "clover" ? "Clover logo" : productCategory === "worldpay" ? "Worldpay logo" : ""}
+                  src={(productCategory || featureCategory) === "clover" ? cloverLogo : (productCategory || featureCategory) === "worldpay" ? worldPayLogo : null}
+                  alt={(productCategory || featureCategory) === "clover" ? "Clover logo" : (productCategory || featureCategory) === "worldpay" ? "Worldpay logo" : ""}
                   width={64 || 96}
                   height={32}
                   sizes="(@max-width: 1200px) 64px, 96px"
-                  className={styles.productLogo}
+                  className={productCategory.length ? styles.productLogo : featureStyles.featureLogo}
                   loading="lazy" />)}
 
             </>
@@ -77,14 +84,15 @@ export default function ProductSection({
           {hasBtns && (
 
             <Buttons
-              btnOneText="Get in Touch"
-              btnOneLink="/contact"
+              btnOneText={btnTextOne}
+              btnOneLink={btnLinkOne}
               btnOneClass="primary hasAnimation"
-              btnTwoText="View All Products"
-              btnTwoLink="/products"
+              btnTwoText={btnTextTwo}
+              btnTwoLink={btnLinkTwo}
               btnTwoClass="light"
               className={styles.productSectionButtons}
             />
+
           )}
 
         </div>

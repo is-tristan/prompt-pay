@@ -2,11 +2,10 @@
 
 // Next
 import { usePathname } from "next/navigation";
-import Link from "next/link";
 import Image from "next/image";
 
 // Components
-import ProductMenuItems from "./product-menu-items";
+import FeatureMenuItems from "./feature-menu-items";
 
 // Styles
 import styles from "@/styles/ui/layout/mega-menu.module.scss";
@@ -27,29 +26,29 @@ export default function ProductMenu() {
 
                 <div className={`${styles.productMenuCol} ${styles.cloverCol}`}>
 
-                    <Link href="/products/clover" className={styles.productMenuHeader}>
+                    <div className={styles.productMenuHeader}>
 
                         <Image src={cloverLogo} width={80} height={32} alt="Clover logo" sizes={"80px"} className={styles.productMenuLogo} />
 
-                        <span className={styles.productMenuTitle}>All Clover products</span>
+                        <span className={styles.productMenuTitle}>Clover features</span>
 
-                    </Link>
+                    </div>
 
-                    <ProductMenuItems currentUrl={pathname} categoryFilter={"clover"} />
+                    <FeatureMenuItems currentUrl={pathname} categoryFilter={"clover"} />
 
                 </div>
 
                 <div className={`${styles.productMenuCol} ${styles.worldpayCol}`}>
 
-                    <Link href="/products/worldpay" className={styles.productMenuHeader}>
+                    <div className={styles.productMenuHeader}>
 
                         <Image src={worldpayLogo} width={80} height={32} alt="Worldpay logo" sizes={"80px"} className={styles.productMenuLogo} />
 
-                        <span className={styles.productMenuTitle}>All Worldpay products</span>
+                        <span className={styles.productMenuTitle}>Worldpay features</span>
 
-                    </Link>
+                    </div>
 
-                    <ProductMenuItems currentUrl={pathname} categoryFilter={"worldpay"} />
+                    <FeatureMenuItems currentUrl={pathname} categoryFilter={"worldpay"} />
 
                 </div>
 

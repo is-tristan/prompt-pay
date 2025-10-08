@@ -68,7 +68,7 @@ export default function ctaRow() {
 
           <div className="floatingText floatingTextOne">
 
-            <Link href="/products/worldpay-dx4000" />
+            <Link href="/features/worldpay-gateway" />
 
             <div className="floatingTextHeader">
 
@@ -90,7 +90,7 @@ export default function ctaRow() {
 
           <div className="floatingText floatingTextTwo">
 
-            <Link href="/products/clover-flex" />
+            <Link href="/features/clover-gateway" />
             
             <div className="floatingTextHeader">
 

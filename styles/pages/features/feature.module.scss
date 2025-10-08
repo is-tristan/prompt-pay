@@ -1,0 +1,18 @@
+.featureHeader {
+    margin-top: calc(var(--headerHeight) * 0.66);
+
+    @media (width >=1200px) {
+        margin-top: calc(var(--headerHeight) * 1);
+    }
+
+    .featureLogo {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+
+        @media (width >=768px) {
+            width: 6rem;
+        }
+    }
+}

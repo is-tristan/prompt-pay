@@ -13,6 +13,7 @@ import mobileStyles from "@/styles/ui/layout/mobile-menu.module.scss";
 import Buttons from "@/components/ui/reusables/buttons";
 import MobileMenu from "@/components/ui/layout/header-parts/mobile-menu";
 import ProductMenu from "@/components/ui/layout/header-parts/product-menu";
+import FeatureMenu from "@/components/ui/layout/header-parts/feature-menu";
 
 import { useState } from "react";
 
@@ -30,12 +31,22 @@ export default function Header() {
                 { component: "ProductMenu" }
             ]
         },
+        {
+            href: "#",
+            label: "Features",
+            class: "hasMegaMenu",
+            megaMenu: [
+                { component: "FeatureMenu" }
+            ]
+        },
         { href: "/careers", label: "Careers" },
         { href: "/about", label: "About" },
         { href: "/contact", label: "Contact" },
     ];
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [hoveredMenu, setHoveredMenu] = useState(null);
+    const [loadedMenus, setLoadedMenus] = useState({});
 
     const handleMobileMenuToggle = () => {
         setIsMobileMenuOpen((prev) => !prev);
@@ -43,6 +54,18 @@ export default function Header() {
 
     const handleMobileMenuClose = () => {
         setIsMobileMenuOpen(false);
+    };
+
+    const handleMenuHover = (menuLabel) => {
+        setHoveredMenu(menuLabel);
+        // Mark this menu as loaded once it's hovered
+        if (!loadedMenus[menuLabel]) {
+            setLoadedMenus(prev => ({ ...prev, [menuLabel]: true }));
+        }
+    };
+
+    const handleMenuLeave = () => {
+        setHoveredMenu(null);
     };
 
     if (typeof window !== "undefined") window.addEventListener("scroll", () => {
@@ -59,7 +82,7 @@ export default function Header() {
     });
 
     const pathname = usePathname();
-    const isProductPage = pathname.includes("products");
+    const isProductPage = pathname.includes("products") || pathname.includes("features");
     const headerClass = isProductPage ? styles.productHeader : "";
 
     return (
@@ -82,29 +105,52 @@ export default function Header() {
 
                     {desktopLinks.map((link, index) => (
 
-                        <div className={`${styles.navItem} ${link.class ? styles[link.class] : ""}`} key={index}>
+                        <div
+                            className={`${styles.navItem} ${link.class ? styles[link.class] : ""}`}
+                            key={index}
+                            onMouseEnter={() => link.megaMenu && handleMenuHover(link.label)}
+                            onMouseLeave={handleMenuLeave}
+                        >
 
-                            <Link href={link.href} className={`${styles.navLink}`}>
+                            {link.megaMenu ? (
 
-                                {link.label}
+                                <>
 
-                            </Link>
+                                    <Link href={link.href} className={`${styles.navLink}`} aria-haspopup="true" aria-expanded={hoveredMenu === link.label}>
 
-                            {link.megaMenu && (
+                                        {link.label}
 
-                                <div className={`${styles.megaMenu}`}>
+                                    </Link>
 
-                                    {link.megaMenu.map((menuItem, subIndex) => (
+                                    {link.megaMenu && loadedMenus[link.label] && (
 
-                                        <div key={subIndex}>
+                                        <div className={`${styles.megaMenu}`}>
 
-                                            {menuItem.component === "ProductMenu" && <ProductMenu />}
+                                            {link.megaMenu.map((menuItem, subIndex) => (
+
+                                                <div key={subIndex}>
+
+                                                    {menuItem.component === "ProductMenu" && <ProductMenu />}
+
+                                                    {menuItem.component === "FeatureMenu" && <FeatureMenu />}
+
+                                                </div>
+
+                                            ))}
 
                                         </div>
 
-                                    ))}
+                                    )}
 
-                                </div>
+                                </>
+
+                            ) : (
+
+                                <Link href={link.href} className={`${styles.navLink}`}>
+
+                                    {link.label}
+
+                                </Link>
 
                             )}
 
