@@ -50,13 +50,6 @@ export default function FaqsSection() {
           title="Quick answers, even faster payments"
         />
 
-        <Buttons
-          btnOneClass="primary hasAnimation"
-          btnOneText="See all FAQs"
-          btnOneLink="/faqs"
-          hiddenMobile={true}
-        />
-
       </div>
 
       <div className="container noPaddingTop">
@@ -70,7 +63,7 @@ export default function FaqsSection() {
           btnOneLink="/faqs"
           hiddenDesktop={true}
         /> */}
-        
+
       </div>
 
     </section>
