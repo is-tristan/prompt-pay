@@ -9,13 +9,16 @@ export default function FooterLogo() {
   const logoSrc = "/logos/logo-light.svg";
   const facebookIcon = "/icons/socials/square-facebook-brands-solid-full.svg";
   const linkedinIcon = "/icons/socials/square-linkedin-brands-solid-full.svg";
-  const twitterIcon = "/icons/socials/square-x-twitter-brands-solid-full.svg";
   const youtubeIcon = "/icons/socials/square-youtube-brands-solid-full.svg";
 
   return (
+
     <div className={`container ${styles.footerContainer} ${styles.footerLogo}`}>
+
       <div className={styles.footerLogoItem}>
+
         <Link href="/" aria-label="Prompt Pay Home">
+
           <Image
             src={logoSrc}
             width={156}
@@ -24,16 +27,20 @@ export default function FooterLogo() {
             className={styles.footerLogoMark}
             loading="lazy"
           />
+
         </Link>
+
       </div>
 
       <div className={styles.footerSocialLinks}>
+
         <a
-          href="https://www.facebook.com/promptpay/"
+          href="https://www.facebook.com/people/Prompt-Pay-Capital/61581978511377/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Prompt Pay Facebook Page"
         >
+
           {
             <Image
               src={facebookIcon}
@@ -42,6 +49,7 @@ export default function FooterLogo() {
               height={24}
             />
           }
+
         </a>
 
         <a
@@ -50,12 +58,14 @@ export default function FooterLogo() {
           rel="noopener noreferrer"
           aria-label="Prompt Pay LinkedIn Page"
         >
+
           <Image
             src={linkedinIcon}
             alt="LinkedIn Icon"
             width={24}
             height={24}
           />
+
         </a>
 
         <a
@@ -64,14 +74,20 @@ export default function FooterLogo() {
           rel="noopener noreferrer"
           aria-label="Prompt Pay YouTube Page"
         >
+
           <Image
             src={youtubeIcon}
             alt="YouTube Icon"
             width={24}
             height={24}
           />
+
         </a>
+
       </div>
+
     </div>
+
   );
+
 }

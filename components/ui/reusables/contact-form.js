@@ -14,7 +14,7 @@ export default function ContactForm({ data = "New Contact Form Submission", hasE
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", process.env.CONTACT_FORM_ACCESS_KEY);
+    formData.append("access_key", "07ec042f-2c2d-4cbd-b31f-24032eda0cc7");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -36,7 +36,7 @@ export default function ContactForm({ data = "New Contact Form Submission", hasE
 
   return (
     <>
-      <form onSubmit={onSubmit} className="form contactForm">
+      <form onSubmit={onSubmit} className="form contactForm" style={{ display: result === "Form Submitted Successfully" ? "none" : "flex", }}>
 
         <input type="hidden" name="subject" value={data} />
 
@@ -128,7 +128,7 @@ export default function ContactForm({ data = "New Contact Form Submission", hasE
 
       </form>
 
-      <span className="error">{result}</span>
+      <span className="error" style={{ display: result === "Form Submitted Successfully" ? "none" : "block", }}>{result}</span>
 
       <div className="formMessage container centered" aria-live="polite" aria-atomic="true" style={{ display: result === "Form Submitted Successfully" ? "flex" : "none", }} >
 

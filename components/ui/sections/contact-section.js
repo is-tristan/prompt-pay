@@ -16,28 +16,35 @@ export default function ContactSection({
   className = "dualCols",
   eyebrow = "GET IN TOUCH TODAY",
   title = "Speak to an expert",
+  titleClassName="hasFullStop",
+  colTitle = "Book your consultation",
   text = "Discover enhanced payment solutions and start lowering your fees today.",
   rowReverse = false,
   hasAddress = false,
   hasHours = false,
 }) {
   return (
+
     <section id="contact" className={`row ${styles.contactSection}`}>
-      <div
-        className={`container ${styles.contactSectionContainer} ${className ? className : undefined} ${rowReverse ? styles.rowReverse : undefined}`}
-      >
+
+      <div className={`container ${styles.contactSectionContainer} ${className ? className : undefined} ${rowReverse ? styles.rowReverse : undefined}`}>
+
         <div className={`col ${styles.contactFormCol}`}>
-          <h3>
-            Book your consultation
-            <span style={{ color: "var(--primary)" }}>.</span>
-          </h3>
+
+          {colTitle && (
+
+            <h3>{colTitle}<span style={{ color: "var(--primary)" }}>.</span> </h3>
+
+          )}
 
           <ContactForm />
+
         </div>
 
         <div className={`col ${styles.contactInfoCol}`}>
+
           <Heading
-            className="hasFullStop"
+            className={titleClassName}
             eyebrow={eyebrow}
             title={title}
             text={text}
@@ -48,32 +55,38 @@ export default function ContactSection({
             hasAddress={hasAddress}
             hasHours={hasHours}
           />
+
         </div>
+
       </div>
+
 
       {rowReverse
         ? <Image
-            src={dotsTopRight}
-            alt=""
-            fill
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            style={{
-              objectFit: "contain",
-              objectPosition: "top right",
-              zIndex: "-1",
-            }}
-          />
+          src={dotsTopRight}
+          alt=""
+          fill
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          style={{
+            objectFit: "contain",
+            objectPosition: "top right",
+            zIndex: "-1",
+          }}
+        />
         : <Image
-            src={dotsBottomLeft}
-            alt=""
-            fill
-            sizes="(max-width: 1200px) 100vw, 1200px"
-            style={{
-              objectFit: "contain",
-              objectPosition: "bottom left",
-              zIndex: "-1",
-            }}
-          />}
+          src={dotsBottomLeft}
+          alt=""
+          fill
+          sizes="(max-width: 1200px) 100vw, 1200px"
+          style={{
+            objectFit: "contain",
+            objectPosition: "bottom left",
+            zIndex: "-1",
+          }}
+        />}
+
     </section>
+
   );
+
 }

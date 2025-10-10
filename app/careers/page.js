@@ -57,7 +57,7 @@ export default function CareersPage() {
 
             <CareersGrid />
 
-            <ContactSection />
+            <ContactSection colTitle="Apply Now" title="Interested in a role?" titleClassName="" text="If you're passionate about shaping the future of payments, we'd love to hear from you." />
 
         </>
 
