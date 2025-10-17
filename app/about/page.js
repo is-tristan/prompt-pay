@@ -13,6 +13,7 @@ const bannerImage = "/covers/about-cover.webp";
 
 // Videos
 const videoSrc = "/videos/about-video.mp4";
+const videoMobileSrc = "/videos/about-video-mobile.mp4";
 const videoPoster = "/videos/posters/about-video-poster.webp";
 
 export default function AboutPage() {
@@ -32,7 +33,7 @@ export default function AboutPage() {
       <VideoRow
         id="video"
         videoSrc={videoSrc}
-        type="video/mp4"
+        videoMobileSrc={videoMobileSrc}
         poster={videoPoster}
         overlayBanner={true}
       />

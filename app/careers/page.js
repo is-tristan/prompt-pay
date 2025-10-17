@@ -7,6 +7,7 @@ import ContactSection from "@/components/ui/sections/contact-section";
 
 // Images
 const videoSrc = "/videos/meet-the-team-video.mp4";
+const mobileVideoSrc = "/videos/meet-the-team-video-mobile.mp4";
 const videoPoster = "/videos/posters/meet-the-team-video-poster.webp";
 const careersIntroImage = "/images/misc/careers-intro-image.webp";
 
@@ -29,6 +30,7 @@ export default function CareersPage() {
                 buttonTextTwo="Contact us"
                 buttonLinkTwo="/contact"
                 videoSrc={videoSrc}
+                mobileSrc={mobileVideoSrc}
                 videoPoster={videoPoster}
             />
 

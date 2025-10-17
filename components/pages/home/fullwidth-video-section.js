@@ -6,9 +6,13 @@ import { useEffect, useRef, useState } from "react";
 // Components
 import Loader from "@/components/misc/loader";
 
+// Utils
+import getScreenSize from "@/utils/screen-size";
+
 export default function FullwidthVideoSection() {
   const [isVideoLoading, setIsVideoLoading] = useState(true);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState(undefined);
   const videoRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -21,7 +25,15 @@ export default function FullwidthVideoSection() {
   };
 
   const videoSrc = "/videos/prompt-pay-marketing-video.mp4";
+  const mobileVideoSrc = "/videos/prompt-pay-marketing-video-mobile.mp4";
   const posterSrc = "/videos/posters/prompt-pay-marketing-video-poster.webp";
+
+  useEffect(() => {
+    if (shouldLoadVideo) {
+      const screenSize = getScreenSize();
+      setCurrentVideoSrc(screenSize.width >= 768 ? videoSrc : mobileVideoSrc);
+    }
+  }, [shouldLoadVideo]);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -83,7 +95,7 @@ export default function FullwidthVideoSection() {
 
       <video
         ref={videoRef}
-        src={shouldLoadVideo ? videoSrc : undefined}
+        src={currentVideoSrc}
         poster={posterSrc}
         playsInline
         autoPlay={shouldLoadVideo}
@@ -106,7 +118,7 @@ export default function FullwidthVideoSection() {
         onWaiting={() => setIsVideoLoading(true)}
         onPlaying={() => setIsVideoLoading(false)}
       >
-        {shouldLoadVideo && <source src={videoSrc} type="video/mp4" />}
+        {shouldLoadVideo && currentVideoSrc && <source src={currentVideoSrc} type="video/mp4" />}
 
       </video>
 

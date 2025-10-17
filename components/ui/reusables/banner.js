@@ -1,7 +1,7 @@
 "use client";
 
 // React
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // Framer Motion
 import { motion } from "framer-motion";
@@ -14,6 +14,9 @@ import Buttons from "./buttons";
 import Heading from "./heading";
 import Loader from "@/components/misc/loader";
 
+// Utils
+import getScreenSize from "@/utils/screen-size";
+
 export default function Banner({
   eyebrow = "",
   heading = "",
@@ -25,18 +28,26 @@ export default function Banner({
   buttonLinkTwo = "",
   className = "",
   videoSrc = "",
+  mobileSrc = "",
   videoPoster = "",
   hasVideo = videoSrc ? true : false,
 }) {
 
   const [isVideoLoading, setIsVideoLoading] = useState(true);
+  const [currentVideoSrc, setCurrentVideoSrc] = useState(null);
+  const hasInitialized = useRef(false);
+
+  useEffect(() => {
+    // Only set video source once on mount
+    if (hasVideo && !hasInitialized.current) {
+      const screenSize = getScreenSize();
+      setCurrentVideoSrc(screenSize.width < 768 ? mobileSrc : videoSrc);
+      hasInitialized.current = true;
+    }
+  }, []);
 
   const handleVideoCanPlay = () => {
     setIsVideoLoading(false);
-  };
-
-  const handleVideoLoadStart = () => {
-    setIsVideoLoading(true);
   };
 
   return (
@@ -74,7 +85,7 @@ export default function Banner({
 
       </div>
 
-      {hasVideo && (
+      {hasVideo && currentVideoSrc && (
 
         <>
 
@@ -100,11 +111,12 @@ export default function Banner({
           )}
 
           <video
+            key={currentVideoSrc}
             autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             className={`video`}
             style={{
               width: "100%",
@@ -114,13 +126,10 @@ export default function Banner({
               opacity: isVideoLoading ? 0.3 : 1,
               transition: "opacity 0.3s ease-in-out",
             }}
-            onCanPlay={handleVideoCanPlay}
-            onLoadStart={handleVideoLoadStart}
-            onWaiting={() => setIsVideoLoading(true)}
-            onPlaying={() => setIsVideoLoading(false)}
+            onLoadedData={handleVideoCanPlay}
             poster={videoPoster}
-            src={videoSrc}
           >
+            <source src={currentVideoSrc} type="video/mp4" />
           </video>
 
         </>
