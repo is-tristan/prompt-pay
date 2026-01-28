@@ -17,6 +17,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://promptpaycapital.com"),
   title:
     "Prompt Pay Capital ─ Revolutionary products to help your business, flow.",
   description:
@@ -28,11 +29,11 @@ export const metadata = {
       "Prompt Pay Capital ─ Revolutionary products to help your business, flow.",
     description:
       "We give business tools to turn every transaction into an opportunity, and every payment into progress.",
-    url: "https://promptpaycapital.com",
+    url: "/",
     siteName: "Prompt Pay Capital",
     images: [
       {
-        url: "https://promptpaycapital.com/images/misc/og-image.jpg",
+        url: "/images/misc/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Prompt Pay Capital Open Graph Image",
