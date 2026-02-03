@@ -1,6 +1,26 @@
 [
   {
     "id": 1,
+    "name": "Ricky Hicks, Director",
+    "business": "The Elstree Van Center",
+    "businessLogo": "/testimonials/logos/elstree-vans-centre-logo.webp",
+    "quote": "As the Director of Elstree Van Center, I've been extremely impressed with the new payment system and the outstanding support from Alex and his team. The terminal’s compact and durable design suits our busy showroom perfectly and handles high transaction volumes with ease. Setup was quick and completely hassle-free, with Alex making sure everything was installed properly and our team knew how to use it from day one. Payments are processed faster, reporting is clearer, and the overall reliability has been excellent. I'd highly recommend Alex and his team to any dealership or automotive business wanting a modern, efficient payment solution.",
+    "thumbnail": "/testimonials/thumbnails/elstree-vans-centre-thumbnail.webp",
+    "videoUrl": "/testimonials/videos/elstree-vans-centre-testimonial.mp4",
+    "aspectRatio": "9/16"
+  },
+  {
+    "id": 2,
+    "name": "Charlie Meer, Director",
+    "business": "The Pizza Post",
+    "businessLogo": "/testimonials/logos/the-pizza-post-logo.webp",
+    "quote": "As the owners of The Pizza Post, we've been thoroughly impressed with the service provided by Prompt Pay Capital. From the outset, their team made the entire funding process quick, transparent, and stress-free. The flexibility they offer has been a real game-changer for managing our event bookings and ensuring smooth cash flow throughout busy periods. The communication was excellent, and everything was handled professionally from start to finish. We wouldn’t hesitate to recommend Prompt Pay Capital to any growing business looking for a reliable partner that truly understands the needs of small companies.",
+    "thumbnail": "/testimonials/thumbnails/the-pizza-post-thumbnail.webp",
+    "videoUrl": "/testimonials/videos/the-pizza-post-testimonial.mp4",
+    "aspectRatio": "16/9"
+  },
+  {
+    "id": 3,
     "name": "Dr Alexander Tsimbalist",
     "business": "Highfield Avenue Dental London",
     "businessLogo": "/testimonials/logos/highfield-avenue-dental-logo.webp",
@@ -10,7 +30,7 @@
     "aspectRatio": "9/16"
   },
   {
-    "id": 2,
+    "id": 4,
     "name": "Maria",
     "business": "The Coffee Jar, London",
     "businessLogo": "/testimonials/logos/the-coffee-jar-logo.webp",
