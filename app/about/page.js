@@ -57,6 +57,7 @@ export default function AboutPage() {
         btnOneText="Learn More"
         btnOneLink="https://www.syncvue.co.uk"
         btnOneClass="primary hasAnimation"
+        target="_blank"
       />
 
       <ContactSection />
