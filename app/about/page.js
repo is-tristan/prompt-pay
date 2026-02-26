@@ -54,12 +54,9 @@ export default function AboutPage() {
         text="Built initially for wholesale clients, SyncVue links your payment terminal with accounting platforms like QuickBooks, Sage, and Xero. It makes it easy to view invoices, track payments, and collect instantly at the terminal, saving our customers hours of paperwork at the end of the day and thousands in missed payments."
         image="/images/misc/syncvue-logo.webp"
         imageAlt="Syncvue application screenshot"
-        btnOneText="View Clover Products"
-        btnOneLink="/products/clover"
+        btnOneText="Learn More"
+        btnOneLink="https://www.syncvue.co.uk"
         btnOneClass="primary hasAnimation"
-        btnTwoText="View WorldPay Products"
-        btnTwoLink="/products/worldpay"
-        btnTwoClass="light"
       />
 
       <ContactSection />
