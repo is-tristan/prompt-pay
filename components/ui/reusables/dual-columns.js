@@ -16,6 +16,7 @@ export default function DualCols({
   btnOneText = "",
   btnOneLink = "",
   btnOneClass = "primary",
+  target = "_self",
   btnTwoText = "",
   btnTwoLink = "",
   btnTwoClass = "secondary",
@@ -58,6 +59,7 @@ export default function DualCols({
               btnTwoText={btnTwoText}
               btnTwoLink={btnTwoLink}
               btnTwoClass={btnTwoClass}
+              target={target}
             />
           )}
 
