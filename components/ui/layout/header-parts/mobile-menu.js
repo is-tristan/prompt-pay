@@ -14,6 +14,9 @@ import styles from "@/styles/ui/layout/mobile-menu.module.scss";
 import productItems from "@/data/products.json";
 import featureItems from "@/data/features.json";
 
+// Components
+import Buttons from "@/components/ui/reusables/buttons";
+
 export default function MobileMenu({ isOpen, onClose }) {
 
   const [openSubMenu, setOpenSubMenu] = useState(null);
@@ -66,6 +69,7 @@ export default function MobileMenu({ isOpen, onClose }) {
   return (
 
     <>
+
       <div className={`${styles.mobileMenu} ${isOpen ? styles.active : ""}`} role="dialog" aria-modal="true" >
 
         <div className={styles.mobileMenuContainer}>
@@ -103,6 +107,14 @@ export default function MobileMenu({ isOpen, onClose }) {
             </div>
 
           )}
+
+          <div className={`${styles.mobileMenuCta}`}>
+
+            <Buttons btnOneText="Calculator" btnOneLink="/calculator/index.html" target="_blank" btnOneClass={`transparent ${styles.menuBtn}`} icon={false} />
+
+            <Buttons btnOneText="Book a call" btnOneLink="https://calendly.com/alex-promptpaycapital" target="_blank" btnOneClass={`primary ${styles.menuBtn}`} icon={false} />
+
+          </div>
 
         </div>
 

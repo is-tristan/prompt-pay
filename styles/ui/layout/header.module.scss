@@ -49,7 +49,7 @@ $megamenuTransition: all 0.1s ease-in-out;
             }
 
             .logo img {
-                height: calc(var(--headerHeight) * 0.4);
+                height: calc(var(--headerHeight) * 0.35);
             }
         }
     }
@@ -90,7 +90,7 @@ $megamenuTransition: all 0.1s ease-in-out;
 
     img {
         @media (width >=1200px) {
-            height: calc(var(--headerHeight) * 0.5);
+            height: calc(var(--headerHeight) * 0.4);
             width: auto;
             transition: $headerTransition;
         }
@@ -101,12 +101,13 @@ $megamenuTransition: all 0.1s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.5rem;
 
     &.desktopMenu {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        font-size: 0.925rem;
     }
 
     .navItem {
@@ -184,5 +185,23 @@ $megamenuTransition: all 0.1s ease-in-out;
         transition-delay: 0.33s;
         z-index: 99999;
         transform: translateX(0);
+    }
+}
+
+.menuCta {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0.75rem;
+}
+
+.menuBtn {
+    padding: 0.66rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+
+    &:global(.transparent) {
+        &:hover {
+            background: rgba(var(--lightRgb), 0.15);
+        }
     }
 }
