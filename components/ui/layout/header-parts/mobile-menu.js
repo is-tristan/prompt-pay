@@ -110,8 +110,6 @@ export default function MobileMenu({ isOpen, onClose }) {
 
           <div className={`${styles.mobileMenuCta}`}>
 
-            <Buttons btnOneText="Calculator" btnOneLink="/calculator/index.html" target="_blank" btnOneClass={`transparent ${styles.menuBtn}`} icon={false} />
-
             <Buttons btnOneText="Book a call" btnOneLink="https://calendly.com/alex-promptpaycapital" target="_blank" btnOneClass={`primary ${styles.menuBtn}`} icon={false} />
 
           </div>

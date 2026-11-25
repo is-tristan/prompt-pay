@@ -32,7 +32,8 @@ export default function Footer() {
               { id: 1, text: "Home", link: "/" },
               { id: 2, text: "About", link: "/about" },
               { id: 3, text: "Careers", link: "/careers" },
-              { id: 4, text: "Contact", link: "/contact" },
+              { id: 4, text: "Calculator", link: "/calculator/index.html", target: "_blank" },
+              { id: 5, text: "Contact", link: "/contact" },
             ]}
           />
 

@@ -22,6 +22,8 @@ export default function FooterNav({
               key={link.id}
               href={link.link}
               className={styles.footerNavLink}
+              target={link.target || undefined}
+              rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
             >
               {link.text}
             </Link>
